@@ -150,6 +150,11 @@ section{max-width:960px;margin:0 auto;padding:0 20px 44px;}
   align-self:flex-start;font-size:11px;font-weight:700;color:var(--teal);
   background:rgba(20,107,134,.1);padding:3px 9px;border-radius:999px;
 }
+.feat-row{display:flex;flex-wrap:wrap;gap:5px;margin:-2px 0 2px;}
+.feat-pill{
+  font-size:10px;font-weight:700;color:var(--ink-soft);background:rgba(10,58,79,.06);
+  border:1px solid var(--line);padding:3px 8px;border-radius:999px;white-space:nowrap;
+}
 .stepper{display:flex;align-items:center;justify-content:space-between;margin-top:auto;gap:10px;}
 .stepper .btns{display:flex;align-items:center;gap:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;}
 .stepper button{
@@ -379,15 +384,15 @@ footer .credit a:hover{text-decoration:underline;color:var(--coral-dark);}
 
 <script>
 const rooms = [
-  {key:'sk', name:"Superior King (Garden View)", rack:19800, offer:7199, cap:2, qty:0},
-  {key:'st', name:"Superior Twin (Garden View)", rack:19800, offer:7199, cap:2, qty:0},
-  {key:'shv', name:"Superior (Hill View Triple)", rack:22000, offer:9750, cap:3, qty:2},
-  {key:'ssv', name:"Superior (Sea View Triple)", rack:25850, offer:10750, cap:3, qty:0},
-  {key:'stk', name:"Studio King (Sea View)", rack:25000, offer:11000, cap:2, qty:0},
-  {key:'pk', name:"Premier King (Sea View)", rack:26500, offer:12500, cap:2, qty:0},
-  {key:'eco', name:"Eco Suite (Hill View, balcony)", rack:22250, offer:9500, cap:2, qty:0},
-  {key:'exe', name:"Executive Suite (Sea View, balcony)", rack:32350, offer:13500, cap:2, qty:0},
-  {key:'royal', name:"Royal Family Suite (Sea View)", rack:50000, offer:19000, cap:4, qty:3},
+  {key:'sk', name:"Superior King (Garden View)", rack:19800, offer:7199, cap:2, qty:0, beds:"1 King bed"},
+  {key:'st', name:"Superior Twin (Garden View)", rack:19800, offer:7199, cap:2, qty:0, beds:"2 Twin beds"},
+  {key:'shv', name:"Superior (Hill View Triple)", rack:22000, offer:9750, cap:3, qty:2, beds:"1 Double + 1 Single"},
+  {key:'ssv', name:"Superior (Sea View Triple)", rack:25850, offer:10750, cap:3, qty:0, beds:"1 Double + 1 Single"},
+  {key:'stk', name:"Studio King (Sea View)", rack:25000, offer:11000, cap:2, qty:0, beds:"1 King bed"},
+  {key:'pk', name:"Premier King (Sea View)", rack:26500, offer:12500, cap:2, qty:0, beds:"1 King bed"},
+  {key:'eco', name:"Eco Suite (Hill View, balcony)", rack:22250, offer:9500, cap:2, qty:0, beds:"1 King bed"},
+  {key:'exe', name:"Executive Suite (Sea View, balcony)", rack:32350, offer:13500, cap:2, qty:0, beds:"1 King bed"},
+  {key:'royal', name:"Royal Family Suite (Sea View)", rack:50000, offer:19000, cap:4, qty:3, beds:"1 Double + 2 Single"},
 ];
 
 const members = ["Shahrina","Rajib","Muttaqi","Muhtadi","Sharif","Dalia","Yushra","Yafee","Shirin","Zarin","Maya","Kamrun","Saiful","Wasit","Makhzum","Rehana","Muhaimeen","Madiha","Farzana"];
@@ -418,6 +423,12 @@ function buildRoomGrid(){
     card.innerHTML = `
       <span class="cap-pill">Sleeps ${r.cap}</span>
       <h4>${r.name}</h4>
+      <div class="feat-row">
+        <span class="feat-pill">🏊 Pool 8am–6pm</span>
+        <span class="feat-pill">🚐 Shuttle</span>
+        <span class="feat-pill">🍳 Breakfast</span>
+        <span class="feat-pill">🛏 ${r.beds}</span>
+      </div>
       <div class="price-row"><span class="price">${fmt(r.offer)}</span><span class="per-night">/ night</span></div>
       <div class="stepper">
         <div class="btns">
