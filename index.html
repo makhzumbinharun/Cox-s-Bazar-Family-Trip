@@ -124,6 +124,13 @@ section{max-width:960px;margin:0 auto;padding:0 20px 44px;}
   background:var(--gold);color:var(--navy);font-weight:700;font-size:12px;
   padding:7px 14px;border-radius:999px;white-space:nowrap;
 }
+.checkrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;}
+.check-pill{
+  font-size:12.5px;font-weight:700;padding:7px 13px;border-radius:10px;
+  display:flex;align-items:center;gap:6px;
+}
+.check-pill.in{background:rgba(20,107,134,.1);color:var(--teal);}
+.check-pill.out{background:rgba(255,107,74,.12);color:var(--coral-dark);}
 
 /* capacity bar */
 .capacity-box{margin:20px 0 8px;}
@@ -186,6 +193,27 @@ section{max-width:960px;margin:0 auto;padding:0 20px 44px;}
 .roster-hint{font-size:12px;color:var(--ink-soft);margin-top:10px;font-style:italic;}
 
 /* settings */
+.operator-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:18px;margin-bottom:16px;}
+.operator-card{
+  background:var(--card);border:2px solid var(--line);border-radius:16px;padding:16px;
+  display:flex;flex-direction:column;gap:8px;cursor:pointer;transition:border-color .2s ease,box-shadow .2s ease;
+  box-shadow:0 6px 18px -10px rgba(10,58,79,.18);
+}
+.operator-card.active{border-color:var(--coral);box-shadow:0 10px 22px -10px rgba(255,107,74,.35);}
+.operator-card .op-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;}
+.operator-card h4{margin:0;font-size:15.5px;color:var(--navy);font-weight:700;}
+.operator-card .op-seat{font-size:12px;color:var(--ink-soft);font-weight:600;}
+.operator-card .op-price{font-size:19px;font-weight:800;color:var(--coral-dark);}
+.operator-card .op-pick{
+  font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;
+  background:rgba(20,107,134,.1);color:var(--teal);padding:3px 9px;border-radius:999px;align-self:flex-start;
+}
+.operator-card.active .op-pick{background:var(--coral);color:#fff;}
+.operator-card .op-link{
+  margin-top:4px;font-size:12.5px;font-weight:700;color:var(--teal);text-decoration:none;
+  display:inline-flex;align-items:center;gap:4px;
+}
+.operator-card .op-link:hover{color:var(--coral-dark);text-decoration:underline;}
 .settings-card{
   background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);
   padding:20px 22px;display:flex;flex-wrap:wrap;gap:22px;
@@ -246,6 +274,31 @@ input[type=range]::-webkit-slider-thumb{
   transform:rotate(8deg);text-transform:uppercase;
 }
 
+.breakdown-hint{font-size:12.5px;color:var(--ink-soft);margin:-8px 0 14px;font-style:italic;}
+.breakdown-list{
+  background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);
+  padding:8px 18px;
+}
+.breakdown-row{
+  display:flex;justify-content:space-between;align-items:center;gap:10px;
+  padding:10px 0;border-bottom:1px dashed var(--line);
+}
+.breakdown-row:last-child{border-bottom:none;}
+.breakdown-row .bwho{display:flex;align-items:center;gap:10px;min-width:0;}
+.breakdown-row .bavatar{
+  width:28px;height:28px;border-radius:50%;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;font-size:10.5px;font-weight:800;color:#fff;
+  font-family:'Baloo 2';
+}
+.breakdown-row .bname{font-weight:700;color:var(--navy);font-size:13.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.breakdown-row .bnote{font-size:10px;font-weight:700;color:var(--coral-dark);background:rgba(255,107,74,.12);padding:2px 7px;border-radius:999px;margin-left:6px;white-space:nowrap;}
+.breakdown-row .bamt{font-weight:800;color:var(--ink);font-size:14px;white-space:nowrap;}
+.breakdown-total{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:14px 0 10px;margin-top:2px;border-top:2px solid var(--navy);
+  font-weight:800;color:var(--navy);font-size:15px;
+}
+
 /* footer */
 footer{max-width:960px;margin:0 auto;padding:10px 20px 50px;color:var(--ink-soft);font-size:12px;}
 footer .notes{background:rgba(20,107,134,.08);border-left:3px solid var(--teal);padding:12px 16px;border-radius:0 10px 10px 0;margin-bottom:10px;}
@@ -275,7 +328,7 @@ footer .credit a:hover{text-decoration:underline;color:var(--coral-dark);}
   <div class="hero-inner">
     <div class="eyebrow"><span class="dot"></span> Summer Flash Offer · 15 Jun – 31 Jul 2026</div>
     <h1>Dhaka <span class="arrow">→</span> Cox's Bazar<br>Family Trip</h1>
-    <p class="sub">19 of us, one beach, zero stress — plan rooms, rides &amp; budget in one place.</p>
+    <p class="sub" id="heroSub">19 of us, one beach, zero stress — plan rooms, rides &amp; budget in one place.</p>
     <div class="bn-tag bn">শুভ যাত্রা, পরিবার!</div>
   </div>
   <svg class="wave" viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M0,30 C200,60 400,0 600,30 C800,60 1000,0 1200,30 L1200,60 L0,60 Z"></path></svg>
@@ -289,8 +342,9 @@ footer .credit a:hover{text-decoration:underline;color:var(--coral-dark);}
     <div class="route-line"></div>
     <div class="route-pt">🏖 Cox's Bazar</div>
     <div class="route-meta">
-      <span>Saint Martin Paribahan · Sleeper Mercedes Benz</span>
+      <span id="routeOperator">Saint Martin Paribahan · Sleeper Mercedes Benz</span>
       <span>~414 km · ~8–9 hr overnight</span>
+      <span>🗓 3 Jul → 6 Jul 2026 · 3 nights</span>
     </div>
   </div>
 </div>
@@ -305,6 +359,11 @@ footer .credit a:hover{text-decoration:underline;color:var(--coral-dark);}
     <div class="badge">Flash Offer Price</div>
   </div>
 
+  <div class="checkrow">
+    <span class="check-pill in">🛎 Check-in 2:00 PM</span>
+    <span class="check-pill out">🚪 Check-out 11:00 AM</span>
+  </div>
+
   <div class="capacity-box">
     <div class="capacity-top"><span>Beds covered</span><span id="capText">0 / 19</span></div>
     <div class="capacity-track"><div class="capacity-fill" id="capFill" style="width:0%"></div></div>
@@ -315,13 +374,16 @@ footer .credit a:hover{text-decoration:underline;color:var(--coral-dark);}
 </section>
 
 <section id="family-section">
-  <div class="section-head"><div class="label">Who's coming</div><h2>Our 19 Travelers</h2></div>
+  <div class="section-head"><div class="label">Who's coming</div><h2 id="travelersHeading">Our 19 Travelers</h2></div>
   <div class="roster-grid" id="rosterGrid"></div>
   <p class="roster-hint">Tap anyone to cycle their category — Adult → Child 0–5 (free) → Child 6–10 (+৳1,000) → Child 10+ (+৳3,000).</p>
 </section>
 
 <section id="settings-section">
-  <div class="section-head"><div class="label">Fine-tune</div><h2>Discount, Nights &amp; Bus Fare</h2></div>
+  <div class="section-head"><div class="label">Fine-tune</div><h2>Discount, Nights &amp; Bus</h2></div>
+
+  <div class="operator-grid" id="operatorGrid"></div>
+
   <div class="settings-card">
     <div class="field">
       <label>Salesman discount on rooms</label>
@@ -334,12 +396,12 @@ footer .credit a:hover{text-decoration:underline;color:var(--coral-dark);}
       <label>Number of nights</label>
       <div class="num-stepper">
         <button onclick="changeNights(-1)">−</button>
-        <div class="val" id="nightsVal">1</div>
+        <div class="val" id="nightsVal">3</div>
         <button onclick="changeNights(1)">+</button>
       </div>
     </div>
     <div class="field">
-      <label>Bus ticket price (one-way)</label>
+      <label>Bus ticket price (auto-set by operator, editable)</label>
       <div class="bdt-input"><span>৳</span><input type="number" id="busFare" value="2000" min="0" step="50"></div>
     </div>
     <div class="field">
@@ -356,7 +418,7 @@ footer .credit a:hover{text-decoration:underline;color:var(--coral-dark);}
   <div class="section-head"><div class="label">Bottom line</div><h2>Trip Cost Summary</h2></div>
   <div class="ticket-wrap">
     <div class="ticket">
-      <div class="stamp">19 Pax</div>
+      <div class="stamp" id="paxStamp">19 Pax</div>
       <div class="ticket-main">
         <div class="tt-label">Cost Breakdown</div>
         <div class="tline"><span>Room subtotal (before discount)</span><span id="lnSubtotal">৳0</span></div>
@@ -369,11 +431,17 @@ footer .credit a:hover{text-decoration:underline;color:var(--coral-dark);}
       <div class="ticket-side">
         <div class="gt-label">Grand Total</div>
         <div class="gt-amt" id="grandTotal">৳0</div>
-        <div class="pp-label">≈ per person (÷19)</div>
+        <div class="pp-label" id="ppLabel">≈ per person (÷19)</div>
         <div class="pp-amt" id="perPerson">৳0</div>
       </div>
     </div>
   </div>
+</section>
+
+<section id="breakdown-section">
+  <div class="section-head"><div class="label">Who pays what</div><h2>Per-Person Cost</h2></div>
+  <p class="breakdown-hint">Room + bus split evenly across everyone · child/extra-bed fees added only to that traveler.</p>
+  <div class="breakdown-list" id="breakdownList"></div>
 </section>
 
 <footer>
@@ -395,8 +463,8 @@ const rooms = [
   {key:'royal', name:"Royal Family Suite (Sea View)", rack:50000, offer:19000, cap:4, qty:3, beds:"1 Double + 2 Single"},
 ];
 
-const members = ["Shahrina","Rajib","Muttaqi","Muhtadi","Sharif","Dalia","Yushra","Yafee","Shirin","Zarin","Maya","Kamrun","Saiful","Wasit","Makhzum","Rehana","Muhaimeen","Madiha","Farzana"];
-const childDefaults = {"Yafee":"c10p","Madiha":"c10p"};
+const members = ["Shahrina","Rajib","Muttaqi","Muhtadi","Sharif","Dalia","Yushra","Yafee","Shirin","Zarin","Maya","Kamrun","Saiful","Wasit","Makhzum","Rehana","Muhaimeen"];
+const childDefaults = {"Yafee":"c10p"};
 const categories = ["adult","c05","c610","c10p"];
 const catMeta = {
   adult:{label:"Adult", charge:0, cls:"cat-adult"},
@@ -408,8 +476,17 @@ const avatarColors = ["#146B86","#FF6B4A","#F4B740","#A9DCD3","#0A3A4F"];
 const family = members.map((name,i)=>({
   name, cat: childDefaults[name] || "adult", color: avatarColors[i % avatarColors.length]
 }));
+const TOTAL_PEOPLE = family.length;
 
-let nights = 1;
+const operators = [
+  {key:'saintmartin', name:"Saint Martin Paribahan", seat:"Sleeper · Mercedes Benz", fare:2000,
+   url:"https://bdtickets.com/travel/search/bus/dhaka-to-coxs-bazar?journeyDate=2026-07-03&returnDate=2026-07-06&journeyType=onward&seatTypes=Sleeper&busOperators=Saintmartin+Paribahan"},
+  {key:'greenline', name:"Green Line Paribahan", seat:"AC Business Class", fare:2500,
+   url:"https://greenlinebd.com"},
+];
+let selectedOperator = 'saintmartin';
+
+let nights = 3;
 let trips = 2;
 
 const fmt = n => "৳" + Math.round(n).toLocaleString('en-US');
@@ -471,6 +548,39 @@ function buildRoster(){
   });
 }
 
+function buildOperators(){
+  const grid = document.getElementById('operatorGrid');
+  grid.innerHTML = '';
+  operators.forEach(op=>{
+    const card = document.createElement('div');
+    card.className = 'operator-card' + (op.key===selectedOperator ? ' active':'');
+    card.innerHTML = `
+      <div class="op-top">
+        <div>
+          <h4>${op.name}</h4>
+          <div class="op-seat">${op.seat}</div>
+        </div>
+        <div class="op-price">${fmt(op.fare)}</div>
+      </div>
+      <span class="op-pick">${op.key===selectedOperator ? 'Selected' : 'Tap to select'}</span>
+      <a class="op-link" href="${op.url}" target="_blank" rel="noopener">Book tickets ↗</a>`;
+    card.addEventListener('click', e=>{
+      if(e.target.closest('.op-link')) return;
+      selectOperator(op.key);
+    });
+    grid.appendChild(card);
+  });
+}
+
+function selectOperator(key){
+  selectedOperator = key;
+  const op = operators.find(o=>o.key===key);
+  document.getElementById('busFare').value = op.fare;
+  document.getElementById('routeOperator').textContent = `${op.name} · ${op.seat}`;
+  buildOperators();
+  recalc();
+}
+
 function changeNights(delta){
   nights = Math.max(1, Math.min(14, nights+delta));
   document.getElementById('nightsVal').textContent = nights;
@@ -499,15 +609,15 @@ function recalc(){
   });
 
   const totalCap = rooms.reduce((s,r)=>s+r.qty*r.cap,0);
-  const capPct = Math.min(100, (totalCap/19)*100);
-  document.getElementById('capText').textContent = `${totalCap} / 19`;
+  const capPct = Math.min(100, (totalCap/TOTAL_PEOPLE)*100);
+  document.getElementById('capText').textContent = `${totalCap} / ${TOTAL_PEOPLE}`;
   document.getElementById('capFill').style.width = capPct + '%';
   const capNote = document.getElementById('capNote');
-  if(totalCap >= 19){
-    capNote.textContent = totalCap===19 ? "Perfect fit — every traveler has a bed." : `${totalCap-19} spare bed(s) booked.`;
+  if(totalCap >= TOTAL_PEOPLE){
+    capNote.textContent = totalCap===TOTAL_PEOPLE ? "Perfect fit — every traveler has a bed." : `${totalCap-TOTAL_PEOPLE} spare bed(s) booked.`;
     capNote.className = 'capacity-note ok';
   } else {
-    capNote.textContent = `${19-totalCap} traveler(s) still need a bed — add rooms above.`;
+    capNote.textContent = `${TOTAL_PEOPLE-totalCap} traveler(s) still need a bed — add rooms above.`;
     capNote.className = 'capacity-note warn';
   }
 
@@ -518,7 +628,7 @@ function recalc(){
   const roomTotal = roomNet * nights;
 
   const busFare = Number(document.getElementById('busFare').value) || 0;
-  const busTotal = busFare * 19 * trips;
+  const busTotal = busFare * TOTAL_PEOPLE * trips;
 
   const childTotal = family.reduce((s,m)=>s+catMeta[m.cat].charge,0);
 
@@ -530,11 +640,39 @@ function recalc(){
   document.getElementById('lnBus').textContent = fmt(busTotal);
   document.getElementById('lnChild').textContent = fmt(childTotal);
   document.getElementById('grandTotal').textContent = fmt(grand);
-  document.getElementById('perPerson').textContent = fmt(grand/19);
+  document.getElementById('perPerson').textContent = fmt(grand/TOTAL_PEOPLE);
+
+  const baseShare = (roomTotal + busTotal) / TOTAL_PEOPLE;
+  const list = document.getElementById('breakdownList');
+  list.innerHTML = '';
+  family.forEach((m,i)=>{
+    const meta = catMeta[m.cat];
+    const personTotal = baseShare + meta.charge;
+    const initials = m.name.slice(0,2).toUpperCase();
+    const row = document.createElement('div');
+    row.className = 'breakdown-row';
+    row.innerHTML = `
+      <div class="bwho">
+        <div class="bavatar" style="background:${m.color}">${initials}</div>
+        <span class="bname">${m.name}</span>
+        ${meta.charge>0 ? `<span class="bnote">+${fmt(meta.charge)} ${meta.label}</span>` : ''}
+      </div>
+      <div class="bamt">${fmt(personTotal)}</div>`;
+    list.appendChild(row);
+  });
+  const totalRow = document.createElement('div');
+  totalRow.className = 'breakdown-total';
+  totalRow.innerHTML = `<span>Total (${TOTAL_PEOPLE} people)</span><span>${fmt(grand)}</span>`;
+  list.appendChild(totalRow);
 }
 
 buildRoomGrid();
+buildOperators();
 buildRoster();
+document.getElementById('heroSub').textContent = `${TOTAL_PEOPLE} of us, one beach, zero stress — plan rooms, rides & budget in one place.`;
+document.getElementById('travelersHeading').textContent = `Our ${TOTAL_PEOPLE} Travelers`;
+document.getElementById('paxStamp').textContent = `${TOTAL_PEOPLE} Pax`;
+document.getElementById('ppLabel').textContent = `≈ per person (÷${TOTAL_PEOPLE})`;
 recalc();
 </script>
 </body>
