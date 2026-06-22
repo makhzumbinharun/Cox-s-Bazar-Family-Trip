@@ -275,6 +275,63 @@ input[type=range]::-webkit-slider-thumb{
 }
 
 .breakdown-hint{font-size:12.5px;color:var(--ink-soft);margin:-8px 0 14px;font-style:italic;}
+
+/* visiting spots */
+.spots-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:18px;}
+.spot-card{
+  background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;
+  display:flex;gap:14px;align-items:flex-start;box-shadow:0 6px 18px -10px rgba(10,58,79,.18);
+  transition:transform .15s ease;
+}
+.spot-card:hover{transform:translateY(-2px);}
+.spot-icon{font-size:28px;flex-shrink:0;margin-top:2px;}
+.spot-body h4{margin:0 0 5px;color:var(--navy);font-size:14.5px;}
+.spot-body p{margin:0 0 8px;color:var(--ink-soft);font-size:12.5px;line-height:1.5;}
+.spot-tag{
+  font-size:10.5px;font-weight:700;color:var(--teal);
+  background:rgba(20,107,134,.1);padding:3px 8px;border-radius:999px;
+}
+
+/* download bar */
+.dl-bar{
+  max-width:960px;margin:0 auto 36px;padding:0 20px;
+  display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+}
+.dl-btn{
+  display:flex;align-items:center;gap:8px;
+  background:var(--navy);color:#fff;border:none;
+  padding:12px 22px;border-radius:12px;font-size:14px;font-weight:700;
+  box-shadow:0 6px 16px -6px rgba(10,58,79,.5);
+  transition:background .2s ease,transform .1s ease;
+}
+.dl-btn:hover{background:var(--teal);}
+.dl-btn:active{transform:scale(.97);}
+.dl-note{font-size:12px;font-weight:600;color:var(--ink-soft);}
+
+/* hidden A4 PDF div */
+#pdf-content{
+  display:none;
+  position:fixed;left:-9999px;top:0;
+  width:794px;min-height:1123px;
+  background:#fff;color:#000;
+  font-family:Arial,sans-serif;font-size:12px;
+  padding:48px 52px 40px;
+  box-sizing:border-box;
+}
+.pdf-header{border-bottom:3px solid #0A3A4F;padding-bottom:12px;margin-bottom:18px;}
+.pdf-title{font-size:20px;font-weight:700;color:#0A3A4F;}
+.pdf-sub{font-size:11px;color:#4C6B78;margin-top:4px;}
+.pdf-section-title{font-size:13px;font-weight:700;color:#0A3A4F;background:#DCE6F1;padding:5px 10px;border-radius:4px;margin-bottom:8px;}
+.pdf-table{width:100%;border-collapse:collapse;}
+.pdf-table td{padding:7px 10px;border-bottom:1px solid #E4D9BF;font-size:11.5px;}
+.pdf-table tr:nth-child(even) td{background:#FCF1DD;}
+.pdf-table .pdf-total td{font-weight:700;background:#0A3A4F;color:#fff;font-size:13px;}
+.pdf-footer{
+  border-top:2px solid #0A3A4F;margin-top:28px;padding-top:10px;
+  font-size:10px;color:#4C6B78;display:flex;flex-direction:column;gap:4px;
+}
+
+
 .breakdown-list{
   background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);
   padding:8px 18px;
@@ -443,6 +500,86 @@ footer .credit a:hover{text-decoration:underline;color:var(--coral-dark);}
   <p class="breakdown-hint">Room + bus split evenly across everyone · child/extra-bed fees added only to that traveler.</p>
   <div class="breakdown-list" id="breakdownList"></div>
 </section>
+
+<section id="spots-section">
+  <div class="section-head"><div class="label">Itinerary · Jul 6–8</div><h2>Probable Visiting Spots</h2></div>
+  <div class="spots-grid">
+    <div class="spot-card">
+      <div class="spot-icon">🎢</div>
+      <div class="spot-body">
+        <h4>Sea Pearl Water Park</h4>
+        <p>Right at the resort — unlimited swimming 8 AM–6 PM included with stay.</p>
+        <span class="spot-tag">On-site</span>
+      </div>
+    </div>
+    <div class="spot-card">
+      <div class="spot-icon">🌊</div>
+      <div class="spot-body">
+        <h4>Mermaid Beach</h4>
+        <p>Calm, scenic shoreline about 3 km south of Cox's Bazar town. Ideal for families.</p>
+        <span class="spot-tag">~3 km</span>
+      </div>
+    </div>
+    <div class="spot-card">
+      <div class="spot-icon">🌅</div>
+      <div class="spot-body">
+        <h4>Inani Beach</h4>
+        <p>Famous for unique coral stones and crystal-clear water. ~32 km from town.</p>
+        <span class="spot-tag">~32 km</span>
+      </div>
+    </div>
+    <div class="spot-card">
+      <div class="spot-icon">🌿</div>
+      <div class="spot-body">
+        <h4>Jhawbon</h4>
+        <p>Dense shoreline mangrove forest between Inani and Teknaf — serene nature walk.</p>
+        <span class="spot-tag">Near Inani</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="dl-bar">
+  <button class="dl-btn" onclick="downloadPDF()">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+    Download Trip Summary (PDF)
+  </button>
+  <span class="dl-note">A4 · costs + spots + footer</span>
+</div>
+
+<!-- Hidden A4 PDF content -->
+<div id="pdf-content" aria-hidden="true">
+  <div class="pdf-header">
+    <div class="pdf-title">Dhaka → Cox's Bazar · Family Trip Summary</div>
+    <div class="pdf-sub">Sea Pearl Beach Resort &amp; Spa · 3 Jul – 6 Jul 2026 · <span id="pdf-pax"></span> Travelers</div>
+  </div>
+
+  <div class="pdf-section-title">Cost Breakdown</div>
+  <table class="pdf-table" id="pdf-cost-table">
+    <tr><td>Room subtotal (before discount)</td><td id="pdf-subtotal"></td></tr>
+    <tr><td>Salesman discount (10%)</td><td id="pdf-discount"></td></tr>
+    <tr><td>Room net cost</td><td id="pdf-roomnet"></td></tr>
+    <tr><td>Bus fare total (round trip)</td><td id="pdf-bus"></td></tr>
+    <tr><td>Child / extra-bed charges</td><td id="pdf-child"></td></tr>
+    <tr class="pdf-total"><td><b>GRAND TOTAL</b></td><td id="pdf-grand"></td></tr>
+  </table>
+
+  <div class="pdf-section-title" style="margin-top:18px">Per-Person Cost</div>
+  <table class="pdf-table" id="pdf-person-table"></table>
+
+  <div class="pdf-section-title" style="margin-top:18px">Probable Visiting Spots · Jul 6–8</div>
+  <table class="pdf-table">
+    <tr><td>🎢 Sea Pearl Water Park</td><td>On-site · included with stay</td></tr>
+    <tr><td>🌊 Mermaid Beach</td><td>~3 km from town · family-friendly</td></tr>
+    <tr><td>🌅 Inani Beach</td><td>~32 km · coral stones, clear water</td></tr>
+    <tr><td>🌿 Jhawbon</td><td>Near Inani · mangrove forest walk</td></tr>
+  </table>
+
+  <div class="pdf-footer">
+    <div>0–5 yrs: free · 6–10 yrs: +৳1,000 · 10+ yrs: +৳3,000 · Rates may change without prior notice.</div>
+    <div>Ref: 15/06/2026 · © 2026 Makhzum Bin Harun · github.com/makhzumbinharun</div>
+  </div>
+</div>
 
 <footer>
   <div class="notes">0–5 yrs travel &amp; stay free · 6–10 yrs +৳1,000/child · 10+ yrs +৳3,000/child or adult (extra bed) · rates may change anytime with prior notification.</div>
@@ -674,6 +811,75 @@ document.getElementById('travelersHeading').textContent = `Our ${TOTAL_PEOPLE} T
 document.getElementById('paxStamp').textContent = `${TOTAL_PEOPLE} Pax`;
 document.getElementById('ppLabel').textContent = `≈ per person (÷${TOTAL_PEOPLE})`;
 recalc();
+
+async function downloadPDF(){
+  const btn = document.querySelector('.dl-btn');
+  btn.textContent = '⏳ Generating…';
+  btn.disabled = true;
+
+  // populate pdf-content from live data
+  const subtotal = parseFloat(document.getElementById('lnSubtotal').textContent.replace(/[৳,]/g,'')) || 0;
+  const discount = parseFloat(document.getElementById('lnDiscount').textContent.replace(/[−৳,]/g,'')) || 0;
+  const roomTotal = parseFloat(document.getElementById('lnRoomTotal').textContent.replace(/[৳,]/g,'')) || 0;
+  const bus = parseFloat(document.getElementById('lnBus').textContent.replace(/[৳,]/g,'')) || 0;
+  const child = parseFloat(document.getElementById('lnChild').textContent.replace(/[৳,]/g,'')) || 0;
+  const grand = parseFloat(document.getElementById('grandTotal').textContent.replace(/[৳,]/g,'')) || 0;
+
+  document.getElementById('pdf-pax').textContent = TOTAL_PEOPLE;
+  document.getElementById('pdf-subtotal').textContent = document.getElementById('lnSubtotal').textContent;
+  document.getElementById('pdf-discount').textContent = document.getElementById('lnDiscount').textContent;
+  document.getElementById('pdf-roomnet').textContent = document.getElementById('lnRoomTotal').textContent;
+  document.getElementById('pdf-bus').textContent = document.getElementById('lnBus').textContent;
+  document.getElementById('pdf-child').textContent = document.getElementById('lnChild').textContent;
+  document.getElementById('pdf-grand').textContent = document.getElementById('grandTotal').textContent;
+
+  // per-person table
+  const baseShare = (roomTotal + bus) / TOTAL_PEOPLE;
+  const pt = document.getElementById('pdf-person-table');
+  pt.innerHTML = '';
+  const hdr = document.createElement('tr');
+  hdr.innerHTML = '<td><b>#</b></td><td><b>Name</b></td><td><b>Base Share</b></td><td><b>Extra</b></td><td><b>Total</b></td>';
+  pt.appendChild(hdr);
+  family.forEach((m,i)=>{
+    const meta = catMeta[m.cat];
+    const total = baseShare + meta.charge;
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td>${i+1}</td><td>${m.name}</td><td>${fmt(baseShare)}</td><td>${meta.charge>0?fmt(meta.charge):'—'}</td><td><b>${fmt(total)}</b></td>`;
+    pt.appendChild(tr);
+  });
+  const tr = document.createElement('tr');
+  tr.className = 'pdf-total';
+  tr.innerHTML = `<td colspan="4"><b>GRAND TOTAL</b></td><td><b>${fmt(grand)}</b></td>`;
+  pt.appendChild(tr);
+
+  // show the hidden div
+  const el = document.getElementById('pdf-content');
+  el.style.display = 'block';
+
+  await new Promise(r=>setTimeout(r,80));
+
+  const canvas = await html2canvas(el, {scale:2, useCORS:true, backgroundColor:'#ffffff', logging:false});
+  const imgData = canvas.toDataURL('image/png');
+
+  const {jsPDF} = window.jspdf;
+  const pdf = new jsPDF({orientation:'portrait', unit:'mm', format:'a4'});
+  const pdfW = 210;
+  const pdfH = (canvas.height * pdfW) / canvas.width;
+  const pageH = 297;
+  let yPos = 0;
+  while(yPos < pdfH){
+    if(yPos > 0) pdf.addPage();
+    pdf.addImage(imgData,'PNG',0,-yPos,pdfW,pdfH,'','FAST');
+    yPos += pageH;
+  }
+  pdf.save('CoxsBazar_FamilyTrip_Summary.pdf');
+
+  el.style.display = 'none';
+  btn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download Trip Summary (PDF)';
+  btn.disabled = false;
+}
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </body>
 </html>
