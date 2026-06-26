@@ -6,441 +6,301 @@
 <title>Dhaka → Cox's Bazar — Family Trip Planner</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Hind+Siliguri:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
-
 :root{
-  --navy:#0A3A4F;
-  --teal:#146B86;
-  --teal-light:#1C8C9E;
-  --sand:#FCF1DD;
-  --card:#FFFBF2;
-  --coral:#FF6B4A;
-  --coral-dark:#E14F30;
-  --gold:#F4B740;
-  --seafoam:#A9DCD3;
-  --ink:#0B3245;
-  --ink-soft:#4C6B78;
-  --line:#E4D9BF;
-  --shadow:0 10px 30px -12px rgba(10,58,79,.25);
+  --navy:#0A3A4F;--teal:#146B86;--teal-light:#1C8C9E;
+  --sand:#FCF1DD;--card:#FFFBF2;--coral:#FF6B4A;--coral-dark:#E14F30;
+  --gold:#F4B740;--seafoam:#A9DCD3;--ink:#0B3245;--ink-soft:#4C6B78;
+  --line:#E4D9BF;--shadow:0 10px 30px -12px rgba(10,58,79,.25);--green:#1E8A5F;
 }
-*{box-sizing:border-box;}
-html,body{margin:0;padding:0;}
-body{
-  background:var(--sand);
-  color:var(--ink);
-  font-family:'Plus Jakarta Sans',sans-serif;
-  line-height:1.5;
-  -webkit-font-smoothing:antialiased;
-}
+*{box-sizing:border-box;}html,body{margin:0;padding:0;}
+body{background:var(--sand);color:var(--ink);font-family:'Plus Jakarta Sans',sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased;}
 .bn{font-family:'Hind Siliguri',sans-serif;}
-h1,h2,h3,.display{font-family:'Baloo 2',sans-serif;}
+h1,h2,h3{font-family:'Baloo 2',sans-serif;}
 img,svg{display:block;max-width:100%;}
 button{font-family:inherit;cursor:pointer;}
-.wrap{max-width:960px;margin:0 auto;padding:0 20px;}
 
-/* ---------- HERO ---------- */
-.hero{
-  position:relative;
-  background:linear-gradient(165deg,var(--navy) 0%,var(--teal) 58%,var(--teal-light) 100%);
-  color:#fff;
-  padding:48px 20px 90px;
-  overflow:hidden;
-  isolation:isolate;
-}
-.hero::before{
-  content:"";position:absolute;inset:0;z-index:-1;opacity:.18;
-  background-image:radial-gradient(circle at 18% 22%, #fff 0 2px, transparent 3px),
-                    radial-gradient(circle at 82% 12%, #fff 0 2px, transparent 3px),
-                    radial-gradient(circle at 60% 35%, #fff 0 1.5px, transparent 2.5px),
-                    radial-gradient(circle at 35% 70%, #fff 0 1.5px, transparent 2.5px),
-                    radial-gradient(circle at 92% 60%, #fff 0 2px, transparent 3px);
-}
+/* HERO */
+.hero{position:relative;background:linear-gradient(165deg,var(--navy) 0%,var(--teal) 58%,var(--teal-light) 100%);color:#fff;padding:48px 20px 90px;overflow:hidden;isolation:isolate;}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;opacity:.18;background-image:radial-gradient(circle at 18% 22%,#fff 0 2px,transparent 3px),radial-gradient(circle at 82% 12%,#fff 0 2px,transparent 3px),radial-gradient(circle at 60% 35%,#fff 0 1.5px,transparent 2.5px),radial-gradient(circle at 35% 70%,#fff 0 1.5px,transparent 2.5px);}
 .hero-inner{max-width:960px;margin:0 auto;position:relative;}
-.eyebrow{
-  display:inline-flex;align-items:center;gap:8px;
-  background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);
-  padding:6px 14px;border-radius:999px;font-size:13px;font-weight:600;
-  letter-spacing:.04em;text-transform:uppercase;margin-bottom:18px;
-}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.3);padding:6px 14px;border-radius:999px;font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;margin-bottom:18px;}
 .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--gold);}
-.hero h1{
-  font-size:clamp(32px,6.5vw,52px);
-  font-weight:800;line-height:1.05;margin:0 0 10px;
-  text-shadow:0 2px 18px rgba(0,0,0,.15);
-}
+.hero h1{font-size:clamp(32px,6.5vw,52px);font-weight:800;line-height:1.05;margin:0 0 10px;text-shadow:0 2px 18px rgba(0,0,0,.15);}
 .hero h1 .arrow{color:var(--gold);}
-.hero p.sub{
-  font-size:clamp(15px,2.6vw,18px);color:rgba(255,255,255,.85);
-  max-width:520px;margin:0 0 6px;font-weight:500;
-}
-.hero .bn-tag{
-  font-size:clamp(15px,3vw,19px);color:var(--gold);font-weight:600;margin-top:10px;
-}
-.wave{
-  position:absolute;left:0;right:0;bottom:-1px;width:100%;height:60px;
-  fill:var(--sand);
-}
+.hero p.sub{font-size:clamp(15px,2.6vw,18px);color:rgba(255,255,255,.85);max-width:520px;margin:0 0 6px;font-weight:500;}
+.hero .bn-tag{font-size:clamp(15px,3vw,19px);color:var(--gold);font-weight:600;margin-top:10px;}
+.wave{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:60px;fill:var(--sand);}
 
-/* route strip */
-.route{
-  max-width:960px;margin:-58px auto 36px;padding:0 20px;position:relative;z-index:2;
-}
-.route-card{
-  background:var(--card);border:1px solid var(--line);border-radius:18px;
-  box-shadow:var(--shadow);padding:18px 22px;
-  display:flex;align-items:center;gap:14px;flex-wrap:wrap;
-}
+/* ROUTE */
+.route{max-width:960px;margin:-58px auto 36px;padding:0 20px;position:relative;z-index:2;}
+.route-card{background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:18px 22px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
 .route-pt{font-weight:700;font-size:15px;color:var(--navy);white-space:nowrap;}
-.route-line{
-  flex:1 1 120px;min-width:80px;height:2px;position:relative;
-  background-image:linear-gradient(90deg,var(--teal) 0 8px,transparent 8px 14px);
-  background-size:14px 2px;background-repeat:repeat-x;background-position:center;
-}
-.route-bus{
-  font-size:20px;background:var(--coral);color:#fff;width:34px;height:34px;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 10px rgba(255,107,74,.4);
-}
-.route-meta{
-  width:100%;display:flex;gap:18px;flex-wrap:wrap;margin-top:8px;
-  font-size:13px;color:var(--ink-soft);font-weight:600;
-}
-.route-meta span{display:flex;align-items:center;gap:6px;}
+.route-line{flex:1 1 80px;min-width:60px;height:2px;background-image:linear-gradient(90deg,var(--teal) 0 8px,transparent 8px 14px);background-size:14px 2px;background-repeat:repeat-x;background-position:center;}
+.route-icon{font-size:18px;background:var(--coral);color:#fff;width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 10px rgba(255,107,74,.4);}
+.route-meta{width:100%;display:flex;gap:18px;flex-wrap:wrap;margin-top:8px;font-size:13px;color:var(--ink-soft);font-weight:600;}
 
-/* sections */
+/* SECTIONS */
 section{max-width:960px;margin:0 auto;padding:0 20px 44px;}
-.section-head{margin-bottom:18px;}
-.section-head .label{
-  font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--coral-dark);
-}
+.section-head{margin-bottom:16px;}
+.section-head .label{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--coral-dark);}
 .section-head h2{font-size:clamp(22px,4vw,28px);margin:4px 0 0;color:var(--navy);}
 
-/* resort banner */
-.resort-banner{
-  background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);
-  padding:20px 24px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;
-}
+/* RESORT */
+.resort-banner{background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:20px 24px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;}
 .resort-banner h3{margin:0 0 4px;color:var(--navy);font-size:20px;}
 .resort-banner p{margin:0;color:var(--ink-soft);font-size:13.5px;}
-.badge{
-  background:var(--gold);color:var(--navy);font-weight:700;font-size:12px;
-  padding:7px 14px;border-radius:999px;white-space:nowrap;
-}
+.badge{background:var(--gold);color:var(--navy);font-weight:700;font-size:12px;padding:7px 14px;border-radius:999px;white-space:nowrap;}
 .checkrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;}
-.check-pill{
-  font-size:12.5px;font-weight:700;padding:7px 13px;border-radius:10px;
-  display:flex;align-items:center;gap:6px;
-}
+.check-pill{font-size:12.5px;font-weight:700;padding:7px 13px;border-radius:10px;display:flex;align-items:center;gap:6px;}
 .check-pill.in{background:rgba(20,107,134,.1);color:var(--teal);}
 .check-pill.out{background:rgba(255,107,74,.12);color:var(--coral-dark);}
 
-/* capacity bar */
+/* CAPACITY */
 .capacity-box{margin:20px 0 8px;}
 .capacity-top{display:flex;justify-content:space-between;font-size:13.5px;font-weight:700;color:var(--navy);margin-bottom:6px;}
 .capacity-track{height:10px;background:#EFE3C7;border-radius:999px;overflow:hidden;}
 .capacity-fill{height:100%;background:linear-gradient(90deg,var(--teal),var(--seafoam));border-radius:999px;transition:width .3s ease;}
 .capacity-note{font-size:12.5px;margin-top:6px;font-weight:600;}
-.capacity-note.ok{color:#1E8A5F;}
+.capacity-note.ok{color:var(--green);}
 .capacity-note.warn{color:var(--coral-dark);}
 
-/* room cards */
-.room-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:18px;}
-.room-card{
-  background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 16px 14px;
-  box-shadow:0 6px 18px -10px rgba(10,58,79,.18);
-  display:flex;flex-direction:column;gap:10px;transition:transform .2s ease,box-shadow .2s ease;
-}
+/* NIGHT TABS */
+.night-tabs-bar{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 14px;}
+.night-tab{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:8px 14px;font-size:13px;font-weight:700;color:var(--ink-soft);transition:all .15s ease;}
+.night-tab.active{background:var(--navy);color:#fff;border-color:var(--navy);}
+.night-tab:hover:not(.active){border-color:var(--teal);color:var(--teal);}
+
+/* ROOM CARDS */
+.room-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;}
+.room-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:9px;box-shadow:0 6px 18px -10px rgba(10,58,79,.18);transition:border-color .2s,box-shadow .2s;}
 .room-card.active{border-color:var(--teal);box-shadow:0 10px 22px -10px rgba(20,107,134,.35);}
-.room-card h4{margin:0;font-size:15.5px;color:var(--navy);font-family:'Plus Jakarta Sans';font-weight:700;}
-.room-card .price-row{display:flex;align-items:baseline;gap:6px;}
-.room-card .price{font-size:19px;font-weight:800;color:var(--coral-dark);}
-.room-card .per-night{font-size:11.5px;color:var(--ink-soft);font-weight:600;}
-.room-card .cap-pill{
-  align-self:flex-start;font-size:11px;font-weight:700;color:var(--teal);
-  background:rgba(20,107,134,.1);padding:3px 9px;border-radius:999px;
-}
-.feat-row{display:flex;flex-wrap:wrap;gap:5px;margin:-2px 0 2px;}
-.feat-pill{
-  font-size:10px;font-weight:700;color:var(--ink-soft);background:rgba(10,58,79,.06);
-  border:1px solid var(--line);padding:3px 8px;border-radius:999px;white-space:nowrap;
-}
+.room-card h4{margin:0;font-size:15px;color:var(--navy);font-weight:700;}
+.cap-pill{align-self:flex-start;font-size:11px;font-weight:700;color:var(--teal);background:rgba(20,107,134,.1);padding:3px 9px;border-radius:999px;}
+.feat-row{display:flex;flex-wrap:wrap;gap:5px;}
+.feat-pill{font-size:10px;font-weight:700;color:var(--ink-soft);background:rgba(10,58,79,.06);border:1px solid var(--line);padding:3px 8px;border-radius:999px;white-space:nowrap;}
+.price-row{display:flex;align-items:baseline;gap:6px;}
+.price{font-size:19px;font-weight:800;color:var(--coral-dark);}
+.per-night{font-size:11.5px;color:var(--ink-soft);font-weight:600;}
 .stepper{display:flex;align-items:center;justify-content:space-between;margin-top:auto;gap:10px;}
-.stepper .btns{display:flex;align-items:center;gap:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;}
-.stepper button{
-  background:var(--navy);color:#fff;border:none;width:32px;height:32px;font-size:17px;font-weight:700;
-  display:flex;align-items:center;justify-content:center;
-}
+.stepper .btns{display:flex;align-items:center;border:1px solid var(--line);border-radius:10px;overflow:hidden;}
+.stepper button{background:var(--navy);color:#fff;border:none;width:32px;height:32px;font-size:17px;font-weight:700;display:flex;align-items:center;justify-content:center;}
 .stepper button:active{background:var(--teal);}
 .stepper .qty{width:34px;text-align:center;font-weight:800;font-size:15px;background:#fff;height:32px;line-height:32px;}
 .stepper .subtotal{font-size:12.5px;font-weight:700;color:var(--ink-soft);}
 
-/* family roster */
-.roster-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:12px;margin-top:18px;}
-.chip{
-  background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 8px 10px;
-  display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;
-  cursor:pointer;user-select:none;transition:transform .15s ease;
-}
-.chip:active{transform:scale(.95);}
-.avatar{
-  width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;
-  font-weight:800;color:#fff;font-size:15px;font-family:'Baloo 2';
-}
-.chip .name{font-size:12px;font-weight:700;color:var(--navy);line-height:1.2;}
-.chip .cat{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.03em;padding:2px 7px;border-radius:999px;}
-.cat-adult{background:rgba(20,107,134,.12);color:var(--teal);}
-.cat-c05{background:rgba(30,138,95,.12);color:#1E8A5F;}
-.cat-c610{background:rgba(244,183,64,.18);color:#9A6B00;}
-.cat-c10p{background:rgba(255,107,74,.15);color:var(--coral-dark);}
-.roster-hint{font-size:12px;color:var(--ink-soft);margin-top:10px;font-style:italic;}
+/* NIGHT SUMMARY TABLE */
+.night-summary-wrap{margin-top:20px;overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:14px;border:1px solid var(--line);box-shadow:var(--shadow);}
+.night-summary-wrap table{width:100%;border-collapse:collapse;min-width:380px;font-size:13px;}
+.night-summary-wrap th{background:var(--navy);color:#fff;padding:10px 13px;text-align:left;font-size:12px;white-space:nowrap;}
+.night-summary-wrap td{padding:9px 13px;border-bottom:1px solid var(--line);color:var(--ink);white-space:nowrap;}
+.night-summary-wrap tr:nth-child(even) td{background:rgba(252,241,221,.55);}
+.night-summary-wrap .sum-row td{background:rgba(20,107,134,.09);font-weight:700;border-top:2px solid var(--teal);}
+.night-summary-wrap .total-row td{background:rgba(10,58,79,.07);font-weight:700;color:var(--navy);}
+.night-summary-wrap .disc-row td{background:var(--navy);color:#fff;font-weight:800;font-size:14px;}
 
-/* settings */
-.operator-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:18px;margin-bottom:16px;}
-.operator-card{
-  background:var(--card);border:2px solid var(--line);border-radius:16px;padding:16px;
-  display:flex;flex-direction:column;gap:8px;cursor:pointer;transition:border-color .2s ease,box-shadow .2s ease;
-  box-shadow:0 6px 18px -10px rgba(10,58,79,.18);
-}
+/* OPERATOR CARDS */
+.operator-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin:18px 0 16px;}
+.operator-card{background:var(--card);border:2px solid var(--line);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:8px;cursor:pointer;transition:border-color .2s,box-shadow .2s;box-shadow:0 6px 18px -10px rgba(10,58,79,.18);}
 .operator-card.active{border-color:var(--coral);box-shadow:0 10px 22px -10px rgba(255,107,74,.35);}
 .operator-card .op-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;}
-.operator-card h4{margin:0;font-size:15.5px;color:var(--navy);font-weight:700;}
+.operator-card h4{margin:0;font-size:15px;color:var(--navy);font-weight:700;}
 .operator-card .op-seat{font-size:12px;color:var(--ink-soft);font-weight:600;}
-.operator-card .op-price{font-size:19px;font-weight:800;color:var(--coral-dark);}
-.operator-card .op-pick{
-  font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;
-  background:rgba(20,107,134,.1);color:var(--teal);padding:3px 9px;border-radius:999px;align-self:flex-start;
-}
+.operator-card .op-price{font-size:18px;font-weight:800;color:var(--coral-dark);}
+.operator-card .op-pick{font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;background:rgba(20,107,134,.1);color:var(--teal);padding:3px 9px;border-radius:999px;align-self:flex-start;}
 .operator-card.active .op-pick{background:var(--coral);color:#fff;}
-.operator-card .op-link{
-  margin-top:4px;font-size:12.5px;font-weight:700;color:var(--teal);text-decoration:none;
-  display:inline-flex;align-items:center;gap:4px;
-}
+.operator-card .op-link{font-size:12.5px;font-weight:700;color:var(--teal);text-decoration:none;display:inline-flex;align-items:center;gap:4px;}
 .operator-card .op-link:hover{color:var(--coral-dark);text-decoration:underline;}
-.settings-card{
-  background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);
-  padding:20px 22px;display:flex;flex-wrap:wrap;gap:22px;
-}
-.field{flex:1 1 200px;min-width:170px;}
+
+/* SETTINGS */
+.settings-card{background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:20px 22px;display:flex;flex-wrap:wrap;gap:22px;}
+.field{flex:1 1 180px;min-width:160px;}
 .field label{display:block;font-size:12.5px;font-weight:700;color:var(--navy);margin-bottom:8px;}
 .field .value-row{display:flex;align-items:center;gap:10px;}
-input[type=range]{
-  -webkit-appearance:none;width:100%;height:6px;border-radius:999px;background:#EFE3C7;outline:none;
-}
-input[type=range]::-webkit-slider-thumb{
-  -webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:var(--coral);
-  border:3px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.25);cursor:pointer;
-}
+input[type=range]{-webkit-appearance:none;width:100%;height:6px;border-radius:999px;background:#EFE3C7;outline:none;}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:var(--coral);border:3px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.25);cursor:pointer;}
 .pct-val{font-weight:800;color:var(--coral-dark);font-size:14px;min-width:38px;}
 .num-stepper{display:flex;align-items:center;border:1px solid var(--line);border-radius:10px;overflow:hidden;width:fit-content;}
-.num-stepper button{background:var(--navy);color:#fff;border:none;width:30px;height:32px;font-weight:700;}
+.num-stepper button{background:var(--navy);color:#fff;border:none;width:30px;height:32px;font-weight:700;font-size:16px;}
 .num-stepper .val{width:40px;text-align:center;font-weight:800;background:#fff;height:32px;line-height:32px;}
-.bdt-input{
-  display:flex;align-items:center;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff;
-}
-.bdt-input span{background:var(--navy);color:#fff;padding:0 10px;font-weight:700;font-size:13px;height:32px;display:flex;align-items:center;}
-.bdt-input input{
-  border:none;outline:none;padding:0 10px;font-weight:700;font-size:14px;height:32px;width:100%;font-family:inherit;color:var(--ink);
-}
-.toggle{display:flex;border:1px solid var(--line);border-radius:10px;overflow:hidden;width:fit-content;}
-.toggle button{
-  background:#fff;border:none;padding:7px 13px;font-size:12.5px;font-weight:700;color:var(--ink-soft);
-}
-.toggle button.active{background:var(--coral);color:#fff;}
+.bdt-input{display:flex;align-items:center;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff;}
+.bdt-input span{background:var(--navy);color:#fff;padding:0 10px;font-weight:700;font-size:13px;height:32px;display:flex;align-items:center;white-space:nowrap;}
+.bdt-input input{border:none;outline:none;padding:0 10px;font-weight:700;font-size:14px;height:32px;width:100%;font-family:inherit;color:var(--ink);}
+.field-note{font-size:10.5px;color:var(--ink-soft);margin-top:5px;font-weight:600;}
 
-/* ticket */
+/* ROSTER */
+.roster-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(94px,1fr));gap:11px;margin-top:18px;}
+.chip{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px 7px 8px;display:flex;flex-direction:column;align-items:center;gap:4px;text-align:center;}
+.avatar{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:13px;font-family:'Baloo 2';cursor:pointer;transition:transform .1s;}
+.avatar:active{transform:scale(.9);}
+.chip .name{font-size:11px;font-weight:700;color:var(--navy);line-height:1.2;}
+.chip .cat{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.03em;padding:2px 6px;border-radius:999px;cursor:pointer;transition:opacity .1s;}
+.chip .cat:active{opacity:.7;}
+.cat-adult{background:rgba(20,107,134,.12);color:var(--teal);}
+.cat-c05{background:rgba(30,138,95,.12);color:var(--green);}
+.cat-c610{background:rgba(244,183,64,.18);color:#9A6B00;}
+.cat-c10p{background:rgba(255,107,74,.15);color:var(--coral-dark);}
+.trans-pill{font-size:11px;cursor:pointer;padding:3px 5px;border-radius:7px;background:rgba(10,58,79,.06);border:1px solid var(--line);transition:background .15s;user-select:none;line-height:1;}
+.trans-pill:active{opacity:.7;}
+.trans-bb{border-color:rgba(20,107,134,.3);}
+.trans-ff{border-color:rgba(30,138,95,.3);background:rgba(30,138,95,.08);}
+.trans-bf,.trans-fb{border-color:rgba(244,183,64,.4);background:rgba(244,183,64,.09);}
+.roster-hint{font-size:11.5px;color:var(--ink-soft);margin-top:10px;font-style:italic;line-height:1.6;}
+
+/* TICKET */
 .ticket-wrap{margin-top:18px;}
-.ticket{
-  background:linear-gradient(165deg,var(--navy),var(--teal));
-  color:#fff;border-radius:20px;box-shadow:var(--shadow);
-  display:grid;grid-template-columns:1.4fr 1fr;overflow:visible;position:relative;
-}
+.ticket{background:linear-gradient(165deg,var(--navy),var(--teal));color:#fff;border-radius:20px;box-shadow:var(--shadow);display:grid;grid-template-columns:1.4fr 1fr;overflow:visible;position:relative;}
 .ticket-main{padding:24px 22px;}
-.ticket-main .tt-label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--seafoam);font-weight:700;margin-bottom:14px;}
-.tline{display:flex;justify-content:space-between;font-size:13.5px;padding:6px 0;border-bottom:1px dashed rgba(255,255,255,.18);}
-.tline span:first-child{color:rgba(255,255,255,.8);}
+.tt-label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--seafoam);font-weight:700;margin-bottom:14px;}
+.tline{display:flex;justify-content:space-between;font-size:13px;padding:5px 0;border-bottom:1px dashed rgba(255,255,255,.18);}
+.tline span:first-child{color:rgba(255,255,255,.82);}
 .tline span:last-child{font-weight:700;}
+.tline.sub-line{padding-left:14px;font-size:12px;}
+.tline.sub-line span:first-child{color:rgba(255,255,255,.6);}
 .ticket-divider{position:relative;border-left:2px dashed rgba(255,255,255,.35);}
-.ticket-divider::before,.ticket-divider::after{
-  content:"";position:absolute;left:-11px;width:22px;height:22px;border-radius:50%;background:var(--sand);
-}
+.ticket-divider::before,.ticket-divider::after{content:"";position:absolute;left:-11px;width:22px;height:22px;border-radius:50%;background:var(--sand);}
 .ticket-divider::before{top:-11px;}
 .ticket-divider::after{bottom:-11px;}
-.ticket-side{padding:24px 22px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:6px;}
-.ticket-side .gt-label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--gold);font-weight:700;}
-.ticket-side .gt-amt{font-family:'Baloo 2';font-size:clamp(26px,5vw,32px);font-weight:800;}
-.ticket-side .pp-label{font-size:11.5px;color:rgba(255,255,255,.75);margin-top:10px;}
-.ticket-side .pp-amt{font-family:'Baloo 2';font-size:20px;font-weight:700;color:var(--gold);}
-.stamp{
-  position:absolute;top:14px;right:18px;border:2px solid var(--gold);color:var(--gold);
-  font-size:10px;font-weight:800;letter-spacing:.06em;padding:5px 9px;border-radius:8px;
-  transform:rotate(8deg);text-transform:uppercase;
-}
+.ticket-side{padding:24px 22px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:5px;}
+.gt-label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--gold);font-weight:700;}
+.gt-amt{font-family:'Baloo 2';font-size:clamp(26px,5vw,32px);font-weight:800;}
+.pp-label{font-size:11.5px;color:rgba(255,255,255,.75);margin-top:8px;}
+.pp-amt{font-family:'Baloo 2';font-size:20px;font-weight:700;color:var(--gold);}
+.stamp{position:absolute;top:14px;right:18px;border:2px solid var(--gold);color:var(--gold);font-size:10px;font-weight:800;letter-spacing:.06em;padding:5px 9px;border-radius:8px;transform:rotate(8deg);text-transform:uppercase;}
 
+/* BREAKDOWN */
 .breakdown-hint{font-size:12.5px;color:var(--ink-soft);margin:-8px 0 14px;font-style:italic;}
+.breakdown-list{background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:8px 18px;}
+.breakdown-row{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:9px 0;border-bottom:1px dashed var(--line);}
+.breakdown-row:last-of-type{border-bottom:none;}
+.bwho{display:flex;align-items:center;gap:10px;flex:1;min-width:0;}
+.bavatar{width:28px;height:28px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;color:#fff;font-family:'Baloo 2';}
+.binfo{display:flex;flex-direction:column;min-width:0;}
+.bname{font-weight:700;color:var(--navy);font-size:13px;white-space:nowrap;}
+.bdetail{font-size:10.5px;color:var(--ink-soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.bnote{display:inline;font-size:9.5px;font-weight:700;color:var(--coral-dark);background:rgba(255,107,74,.12);padding:1px 6px;border-radius:999px;margin-left:4px;}
+.bamt{font-weight:800;color:var(--ink);font-size:14px;flex-shrink:0;}
+.breakdown-total{display:flex;justify-content:space-between;align-items:center;padding:12px 0 8px;margin-top:2px;border-top:2px solid var(--navy);font-weight:800;color:var(--navy);font-size:15px;}
 
-/* visiting spots */
+/* SPOTS */
 .spots-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:18px;}
-.spot-card{
-  background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;
-  display:flex;gap:14px;align-items:flex-start;box-shadow:0 6px 18px -10px rgba(10,58,79,.18);
-  transition:transform .15s ease;
-}
-.spot-card:hover{transform:translateY(-2px);}
-.spot-icon{font-size:28px;flex-shrink:0;margin-top:2px;}
-.spot-body h4{margin:0 0 5px;color:var(--navy);font-size:14.5px;}
+.spot-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;display:flex;gap:14px;align-items:flex-start;box-shadow:0 6px 18px -10px rgba(10,58,79,.18);}
+.spot-icon{font-size:26px;flex-shrink:0;margin-top:2px;}
+.spot-body h4{margin:0 0 5px;color:var(--navy);font-size:14px;}
 .spot-body p{margin:0 0 8px;color:var(--ink-soft);font-size:12.5px;line-height:1.5;}
-.spot-tag{
-  font-size:10.5px;font-weight:700;color:var(--teal);
-  background:rgba(20,107,134,.1);padding:3px 8px;border-radius:999px;
-}
+.spot-tag{font-size:10.5px;font-weight:700;color:var(--teal);background:rgba(20,107,134,.1);padding:3px 8px;border-radius:999px;}
 
-/* download bar */
-.dl-bar{
-  max-width:960px;margin:0 auto 36px;padding:0 20px;
-  display:flex;align-items:center;gap:14px;flex-wrap:wrap;
-}
-.dl-btn{
-  display:flex;align-items:center;gap:8px;
-  background:var(--navy);color:#fff;border:none;
-  padding:12px 22px;border-radius:12px;font-size:14px;font-weight:700;
-  box-shadow:0 6px 16px -6px rgba(10,58,79,.5);
-  transition:background .2s ease,transform .1s ease;
-}
+/* DOWNLOAD */
+.dl-bar{max-width:960px;margin:0 auto 36px;padding:0 20px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+.dl-btn{display:flex;align-items:center;gap:8px;background:var(--navy);color:#fff;border:none;padding:12px 22px;border-radius:12px;font-size:14px;font-weight:700;box-shadow:0 6px 16px -6px rgba(10,58,79,.5);transition:background .2s,transform .1s;}
 .dl-btn:hover{background:var(--teal);}
 .dl-btn:active{transform:scale(.97);}
 .dl-note{font-size:12px;font-weight:600;color:var(--ink-soft);}
 
-/* hidden A4 PDF div */
-#pdf-content{
-  display:none;
-  position:fixed;left:-9999px;top:0;
-  width:794px;min-height:1123px;
-  background:#fff;color:#000;
-  font-family:Arial,sans-serif;font-size:12px;
-  padding:48px 52px 40px;
-  box-sizing:border-box;
-}
-.pdf-header{border-bottom:3px solid #0A3A4F;padding-bottom:12px;margin-bottom:18px;}
+/* PDF */
+#pdf-content{display:none;position:fixed;left:-9999px;top:0;width:794px;background:#fff;color:#000;font-family:Arial,sans-serif;font-size:12px;padding:48px 52px 44px;box-sizing:border-box;}
+.pdf-header{border-bottom:3px solid #0A3A4F;padding-bottom:12px;margin-bottom:16px;}
 .pdf-title{font-size:20px;font-weight:700;color:#0A3A4F;}
 .pdf-sub{font-size:11px;color:#4C6B78;margin-top:4px;}
 .pdf-section-title{font-size:13px;font-weight:700;color:#0A3A4F;background:#DCE6F1;padding:5px 10px;border-radius:4px;margin-bottom:8px;}
 .pdf-table{width:100%;border-collapse:collapse;}
-.pdf-table td{padding:7px 10px;border-bottom:1px solid #E4D9BF;font-size:11.5px;}
-.pdf-table tr:nth-child(even) td{background:#FCF1DD;}
-.pdf-table .pdf-total td{font-weight:700;background:#0A3A4F;color:#fff;font-size:13px;}
-.pdf-footer{
-  border-top:2px solid #0A3A4F;margin-top:28px;padding-top:10px;
-  font-size:10px;color:#4C6B78;display:flex;flex-direction:column;gap:4px;
-}
+.pdf-table td,.pdf-table th{padding:7px 10px;border-bottom:1px solid #E4D9BF;font-size:11px;vertical-align:middle;}
+.pdf-table th{background:#0A3A4F;color:#fff;font-weight:700;font-size:11px;}
+.pdf-table tr:nth-child(even) td{background:#fdf6eb;}
+.pdf-total td{font-weight:700;background:#0A3A4F!important;color:#fff;font-size:12px;}
+.pdf-footer{border-top:2px solid #0A3A4F;margin-top:24px;padding-top:10px;font-size:10px;color:#4C6B78;display:flex;flex-direction:column;gap:4px;}
 
-
-.breakdown-list{
-  background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);
-  padding:8px 18px;
-}
-.breakdown-row{
-  display:flex;justify-content:space-between;align-items:center;gap:10px;
-  padding:10px 0;border-bottom:1px dashed var(--line);
-}
-.breakdown-row:last-child{border-bottom:none;}
-.breakdown-row .bwho{display:flex;align-items:center;gap:10px;min-width:0;}
-.breakdown-row .bavatar{
-  width:28px;height:28px;border-radius:50%;flex-shrink:0;
-  display:flex;align-items:center;justify-content:center;font-size:10.5px;font-weight:800;color:#fff;
-  font-family:'Baloo 2';
-}
-.breakdown-row .bname{font-weight:700;color:var(--navy);font-size:13.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.breakdown-row .bnote{font-size:10px;font-weight:700;color:var(--coral-dark);background:rgba(255,107,74,.12);padding:2px 7px;border-radius:999px;margin-left:6px;white-space:nowrap;}
-.breakdown-row .bamt{font-weight:800;color:var(--ink);font-size:14px;white-space:nowrap;}
-.breakdown-total{
-  display:flex;justify-content:space-between;align-items:center;
-  padding:14px 0 10px;margin-top:2px;border-top:2px solid var(--navy);
-  font-weight:800;color:var(--navy);font-size:15px;
-}
-
-/* footer */
+/* FOOTER */
 footer{max-width:960px;margin:0 auto;padding:10px 20px 50px;color:var(--ink-soft);font-size:12px;}
 footer .notes{background:rgba(20,107,134,.08);border-left:3px solid var(--teal);padding:12px 16px;border-radius:0 10px 10px 0;margin-bottom:10px;}
 footer .ref{text-align:right;font-weight:600;}
-footer .credit{
-  text-align:center;margin-top:18px;padding-top:14px;border-top:1px solid var(--line);
-  font-weight:600;color:var(--ink-soft);
-}
+footer .credit{text-align:center;margin-top:18px;padding-top:14px;border-top:1px solid var(--line);font-weight:600;color:var(--ink-soft);}
 footer .credit a{color:var(--teal);text-decoration:none;font-weight:700;}
 footer .credit a:hover{text-decoration:underline;color:var(--coral-dark);}
 
-@media (max-width:640px){
+@media(max-width:640px){
   .ticket{grid-template-columns:1fr;}
   .ticket-divider{border-left:none;border-top:2px dashed rgba(255,255,255,.35);margin:0 22px;}
   .ticket-divider::before{left:50%;top:-11px;transform:translateX(-50%);}
-  .ticket-divider::after{left:50%;bottom:auto;top:-11px;transform:translateX(-50%);display:none;}
+  .ticket-divider::after{display:none;}
   .resort-banner{flex-direction:column;align-items:flex-start;}
-}
-@media (prefers-reduced-motion:reduce){
-  *{transition:none !important;animation:none !important;}
 }
 </style>
 </head>
 <body>
 
+<!-- HERO -->
 <div class="hero">
   <div class="hero-inner">
     <div class="eyebrow"><span class="dot"></span> Summer Flash Offer · 15 Jun – 31 Jul 2026</div>
     <h1>Dhaka <span class="arrow">→</span> Cox's Bazar<br>Family Trip</h1>
-    <p class="sub" id="heroSub">19 of us, one beach, zero stress — plan rooms, rides &amp; budget in one place.</p>
+    <p class="sub" id="heroSub">Loading…</p>
     <div class="bn-tag bn">শুভ যাত্রা, পরিবার!</div>
   </div>
   <svg class="wave" viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M0,30 C200,60 400,0 600,30 C800,60 1000,0 1200,30 L1200,60 L0,60 Z"></path></svg>
 </div>
 
+<!-- ROUTE -->
 <div class="route">
   <div class="route-card">
     <div class="route-pt">🏙 Dhaka</div>
     <div class="route-line"></div>
-    <div class="route-bus">🚌</div>
+    <div class="route-icon">🚌</div>
     <div class="route-line"></div>
     <div class="route-pt">🏖 Cox's Bazar</div>
     <div class="route-meta">
       <span id="routeOperator">Saint Martin Paribahan · Sleeper Mercedes Benz</span>
       <span>~414 km · ~8–9 hr overnight</span>
-      <span>🗓 3 Jul → 6 Jul 2026 · 3 nights</span>
+      <span>🗓 6 Jul → 8 Jul 2026 · 2 nights</span>
     </div>
   </div>
 </div>
 
+<!-- RESORT -->
 <section id="resort-section">
   <div class="section-head"><div class="label">Where we're staying</div><h2>Sea Pearl Beach Resort &amp; Spa</h2></div>
   <div class="resort-banner">
     <div>
       <h3>Cox's Bazar, Sea View</h3>
-      <p>Buffet breakfast, water, Wi-Fi, airport shuttle &amp; pool/gym access included · price has 10% service charge + 15% VAT built in</p>
+      <p>Buffet breakfast, mineral water, Wi-Fi, airport shuttle &amp; pool/gym access included · 10% service charge + 15% VAT built in</p>
     </div>
     <div class="badge">Flash Offer Price</div>
   </div>
-
   <div class="checkrow">
     <span class="check-pill in">🛎 Check-in 2:00 PM</span>
     <span class="check-pill out">🚪 Check-out 11:00 AM</span>
   </div>
 
   <div class="capacity-box">
-    <div class="capacity-top"><span>Beds covered</span><span id="capText">0 / 19</span></div>
+    <div class="capacity-top"><span id="capNightLabel">Night 1 beds covered</span><span id="capText">0 / 17</span></div>
     <div class="capacity-track"><div class="capacity-fill" id="capFill" style="width:0%"></div></div>
     <div class="capacity-note" id="capNote"></div>
   </div>
 
-  <div class="room-grid" id="roomGrid"></div>
+  <div class="section-head" style="margin-top:22px;margin-bottom:4px;"><div class="label">Room Plan · Per Night</div></div>
+  <div class="night-tabs-bar" id="nightTabsBar"></div>
+  <div class="room-grid" id="nightRoomsGrid"></div>
+
+  <div class="night-summary-wrap">
+    <table id="nightSummaryTable"></table>
+  </div>
 </section>
 
+<!-- FAMILY -->
 <section id="family-section">
-  <div class="section-head"><div class="label">Who's coming</div><h2 id="travelersHeading">Our 17 Travelers</h2></div>
+  <div class="section-head"><div class="label">Who's coming</div><h2 id="travelersHeading">Our Travelers</h2></div>
   <div class="roster-grid" id="rosterGrid"></div>
-  <p class="roster-hint">Tap anyone to cycle their category — Adult → Child 0–5 (free) → Child 6–10 (+৳1,000) → Child 10+ (+৳3,000).</p>
+  <p class="roster-hint">
+    Tap <b>avatar/name</b> → cycle age category &nbsp;·&nbsp;
+    Tap <b>age badge</b> → cycle age &nbsp;·&nbsp;
+    Tap <b>transport icon</b> → cycle travel mode<br>
+    🚌→🚌 bus both &nbsp;·&nbsp; ✈️→✈️ flight both &nbsp;·&nbsp; 🚌→✈️ bus go / flight back &nbsp;·&nbsp; ✈️→🚌 flight go / bus back
+  </p>
 </section>
 
+<!-- SETTINGS -->
 <section id="settings-section">
-  <div class="section-head"><div class="label">Fine-tune</div><h2>Discount, Nights &amp; Bus</h2></div>
-
+  <div class="section-head"><div class="label">Fine-tune</div><h2>Transport &amp; Settings</h2></div>
   <div class="operator-grid" id="operatorGrid"></div>
-
   <div class="settings-card">
     <div class="field">
       <label>Salesman discount on rooms</label>
@@ -453,187 +313,217 @@ footer .credit a:hover{text-decoration:underline;color:var(--coral-dark);}
       <label>Number of nights</label>
       <div class="num-stepper">
         <button onclick="changeNights(-1)">−</button>
-        <div class="val" id="nightsVal">3</div>
+        <div class="val" id="nightsVal">2</div>
         <button onclick="changeNights(1)">+</button>
       </div>
     </div>
     <div class="field">
-      <label>Bus ticket price (auto-set by operator, editable)</label>
+      <label>Bus fare per ticket (one-way)</label>
       <div class="bdt-input"><span>৳</span><input type="number" id="busFare" value="2000" min="0" step="50"></div>
     </div>
     <div class="field">
-      <label>Trip type</label>
-      <div class="toggle">
-        <button id="oneWayBtn" onclick="setTrips(1)">One-way</button>
-        <button id="roundBtn" class="active" onclick="setTrips(2)">Round trip</button>
-      </div>
+      <label>Flight fare per ticket (one-way)</label>
+      <div class="bdt-input"><span>৳</span><input type="number" id="flightFare" value="4500" min="0" step="100"></div>
+    </div>
+    <div class="field">
+      <label>Child surcharge rate</label>
+      <div class="bdt-input"><span>৳</span><input type="number" id="childRate" value="1000" min="0" step="100"></div>
+      <div class="field-note">per child · per night</div>
     </div>
   </div>
 </section>
 
+<!-- TICKET -->
 <section id="ticket-section">
   <div class="section-head"><div class="label">Bottom line</div><h2>Trip Cost Summary</h2></div>
   <div class="ticket-wrap">
     <div class="ticket">
-      <div class="stamp" id="paxStamp">19 Pax</div>
+      <div class="stamp" id="paxStamp">17 Pax</div>
       <div class="ticket-main">
         <div class="tt-label">Cost Breakdown</div>
         <div class="tline"><span>Room subtotal (before discount)</span><span id="lnSubtotal">৳0</span></div>
         <div class="tline"><span>Discount</span><span id="lnDiscount">−৳0</span></div>
-        <div class="tline"><span>Room total (× nights)</span><span id="lnRoomTotal">৳0</span></div>
-        <div class="tline"><span>Bus fare total</span><span id="lnBus">৳0</span></div>
-        <div class="tline"><span>Child / extra-bed charges</span><span id="lnChild">৳0</span></div>
+        <div class="tline"><span>Room total (all nights)</span><span id="lnRoomTotal">৳0</span></div>
+        <div class="tline"><span>Transport total</span><span id="lnTransport">৳0</span></div>
+        <div class="tline sub-line"><span>🚌 Bus</span><span id="lnBus">৳0</span></div>
+        <div class="tline sub-line"><span>✈️ Flight</span><span id="lnFlight">৳0</span></div>
+        <div class="tline"><span>Child charges</span><span id="lnChild">৳0</span></div>
       </div>
       <div class="ticket-divider"></div>
       <div class="ticket-side">
         <div class="gt-label">Grand Total</div>
         <div class="gt-amt" id="grandTotal">৳0</div>
-        <div class="pp-label" id="ppLabel">≈ per person (÷19)</div>
+        <div class="pp-label" id="ppLabel">≈ per person avg</div>
         <div class="pp-amt" id="perPerson">৳0</div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- PER-PERSON -->
 <section id="breakdown-section">
   <div class="section-head"><div class="label">Who pays what</div><h2>Per-Person Cost</h2></div>
-  <p class="breakdown-hint">Room + bus split evenly across everyone · child/extra-bed fees added only to that traveler.</p>
+  <p class="breakdown-hint">Room cost shared equally · each person's transport is their own mode's fare · child surcharge = ৳/night × nights.</p>
   <div class="breakdown-list" id="breakdownList"></div>
 </section>
 
+<!-- SPOTS -->
 <section id="spots-section">
   <div class="section-head"><div class="label">Itinerary · Jul 6–8</div><h2>Probable Visiting Spots</h2></div>
   <div class="spots-grid">
-    <div class="spot-card">
-      <div class="spot-icon">🎢</div>
-      <div class="spot-body">
-        <h4>Sea Pearl Water Park</h4>
-        <p>Right at the resort — unlimited swimming 8 AM–6 PM included with stay.</p>
-        <span class="spot-tag">On-site</span>
-      </div>
-    </div>
-    <div class="spot-card">
-      <div class="spot-icon">🌊</div>
-      <div class="spot-body">
-        <h4>Mermaid Beach</h4>
-        <p>Calm, scenic shoreline about 3 km south of Cox's Bazar town. Ideal for families.</p>
-        <span class="spot-tag">~3 km</span>
-      </div>
-    </div>
-    <div class="spot-card">
-      <div class="spot-icon">🌅</div>
-      <div class="spot-body">
-        <h4>Inani Beach</h4>
-        <p>Famous for unique coral stones and crystal-clear water. ~32 km from town.</p>
-        <span class="spot-tag">~32 km</span>
-      </div>
-    </div>
-    <div class="spot-card">
-      <div class="spot-icon">🌿</div>
-      <div class="spot-body">
-        <h4>Jhawbon</h4>
-        <p>Dense shoreline mangrove forest between Inani and Teknaf — serene nature walk.</p>
-        <span class="spot-tag">Near Inani</span>
-      </div>
-    </div>
+    <div class="spot-card"><div class="spot-icon">🎢</div><div class="spot-body"><h4>Sea Pearl Water Park</h4><p>Right at the resort — unlimited swimming 8 AM–6 PM included with stay.</p><span class="spot-tag">On-site</span></div></div>
+    <div class="spot-card"><div class="spot-icon">🌊</div><div class="spot-body"><h4>Mermaid Beach</h4><p>Calm, scenic shoreline about 3 km south of Cox's Bazar town. Ideal for families.</p><span class="spot-tag">~3 km</span></div></div>
+    <div class="spot-card"><div class="spot-icon">🌅</div><div class="spot-body"><h4>Inani Beach</h4><p>Famous for unique coral stones and crystal-clear water. ~32 km from town.</p><span class="spot-tag">~32 km</span></div></div>
+    <div class="spot-card"><div class="spot-icon">🌿</div><div class="spot-body"><h4>Jhawbon</h4><p>Dense shoreline mangrove forest between Inani and Teknaf — serene nature walk.</p><span class="spot-tag">Near Inani</span></div></div>
   </div>
 </section>
 
+<!-- DOWNLOAD -->
 <div class="dl-bar">
   <button class="dl-btn" onclick="downloadPDF()">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
     Download Trip Summary (PDF)
   </button>
-  <span class="dl-note">A4 · costs + spots + footer</span>
+  <span class="dl-note">A4 · costs per night + per person + spots + footer</span>
 </div>
 
-<!-- Hidden A4 PDF content -->
+<!-- HIDDEN PDF DIV -->
 <div id="pdf-content" aria-hidden="true">
   <div class="pdf-header">
     <div class="pdf-title">Dhaka → Cox's Bazar · Family Trip Summary</div>
-    <div class="pdf-sub">Sea Pearl Beach Resort &amp; Spa · 3 Jul – 6 Jul 2026 · <span id="pdf-pax"></span> Travelers</div>
+    <div class="pdf-sub">Sea Pearl Beach Resort &amp; Spa · 6 Jul – 8 Jul 2026 · <span id="pdf-pax"></span> Travelers</div>
   </div>
-
-  <div class="pdf-section-title">Cost Breakdown</div>
-  <table class="pdf-table" id="pdf-cost-table">
-    <tr><td>Room subtotal (before discount)</td><td id="pdf-subtotal"></td></tr>
-    <tr><td>Salesman discount (10%)</td><td id="pdf-discount"></td></tr>
-    <tr><td>Room net cost</td><td id="pdf-roomnet"></td></tr>
-    <tr><td>Bus fare total (round trip)</td><td id="pdf-bus"></td></tr>
-    <tr><td>Child / extra-bed charges</td><td id="pdf-child"></td></tr>
-    <tr class="pdf-total"><td><b>GRAND TOTAL</b></td><td id="pdf-grand"></td></tr>
+  <div class="pdf-section-title">Room Cost — Per Night Breakdown</div>
+  <table class="pdf-table" id="pdf-room-table"></table>
+  <div class="pdf-section-title" style="margin-top:14px">Overall Cost Summary</div>
+  <table class="pdf-table">
+    <tr><td>Room subtotal (before discount)</td><td id="pdf-subtotal" style="text-align:right"></td></tr>
+    <tr><td>Discount</td><td id="pdf-discount" style="text-align:right"></td></tr>
+    <tr><td>Room total (all nights)</td><td id="pdf-roomnet" style="text-align:right"></td></tr>
+    <tr><td>Bus travel total</td><td id="pdf-bus" style="text-align:right"></td></tr>
+    <tr><td>Flight travel total</td><td id="pdf-flight" style="text-align:right"></td></tr>
+    <tr><td>Child charges</td><td id="pdf-child" style="text-align:right"></td></tr>
+    <tr class="pdf-total"><td><b>GRAND TOTAL</b></td><td id="pdf-grand" style="text-align:right"></td></tr>
   </table>
-
-  <div class="pdf-section-title" style="margin-top:18px">Per-Person Cost</div>
+  <div class="pdf-section-title" style="margin-top:14px">Per-Person Cost</div>
   <table class="pdf-table" id="pdf-person-table"></table>
-
-  <div class="pdf-section-title" style="margin-top:18px">Probable Visiting Spots · Jul 6–8</div>
+  <div class="pdf-section-title" style="margin-top:14px">Probable Visiting Spots · Jul 6–8</div>
   <table class="pdf-table">
     <tr><td>🎢 Sea Pearl Water Park</td><td>On-site · included with stay</td></tr>
     <tr><td>🌊 Mermaid Beach</td><td>~3 km from town · family-friendly</td></tr>
     <tr><td>🌅 Inani Beach</td><td>~32 km · coral stones, clear water</td></tr>
     <tr><td>🌿 Jhawbon</td><td>Near Inani · mangrove forest walk</td></tr>
   </table>
-
   <div class="pdf-footer">
-    <div>0–5 yrs: free · 6–10 yrs: +৳1,000 · 10+ yrs: +৳3,000 · Rates may change without prior notice.</div>
-    <div>Ref: 15/06/2026 · © 2026 Makhzum Bin Harun · github.com/makhzumbinharun</div>
+    <div>Child surcharge: ৳1,000/child/night · 0–5 yrs complimentary · rates may change without prior notice.</div>
+    <div>Ref: 15/06/2026 morning meeting · © 2026 Makhzum Bin Harun · github.com/makhzumbinharun</div>
   </div>
 </div>
 
 <footer>
-  <div class="notes">0–5 yrs travel &amp; stay free · 6–10 yrs +৳1,000/child · 10+ yrs +৳3,000/child or adult (extra bed) · rates may change anytime with prior notification.</div>
+  <div class="notes">Child surcharge ৳1,000/child/night · 0–5 yrs: complimentary stay, food &amp; transport · rates may change anytime with prior notification.</div>
   <div class="ref">Ref: 15/06/2026 morning meeting</div>
   <div class="credit">&copy; 2026 Makhzum Bin Harun · <a href="https://github.com/makhzumbinharun" target="_blank" rel="noopener">github.com/makhzumbinharun</a></div>
 </footer>
 
 <script>
-const rooms = [
-  {key:'sk', name:"Superior King (Garden View)", rack:19800, offer:7199, cap:2, qty:0, beds:"1 King bed"},
-  {key:'st', name:"Superior Twin (Garden View)", rack:19800, offer:7199, cap:2, qty:0, beds:"2 Twin beds"},
-  {key:'shv', name:"Superior (Hill View Triple)", rack:22000, offer:9750, cap:3, qty:2, beds:"1 Double + 1 Single"},
-  {key:'ssv', name:"Superior (Sea View Triple)", rack:25850, offer:10750, cap:3, qty:0, beds:"1 Double + 1 Single"},
-  {key:'stk', name:"Studio King (Sea View)", rack:25000, offer:11000, cap:2, qty:0, beds:"1 King bed"},
-  {key:'pk', name:"Premier King (Sea View)", rack:26500, offer:12500, cap:2, qty:0, beds:"1 King bed"},
-  {key:'eco', name:"Eco Suite (Hill View, balcony)", rack:22250, offer:9500, cap:2, qty:0, beds:"1 King bed"},
-  {key:'exe', name:"Executive Suite (Sea View, balcony)", rack:32350, offer:13500, cap:2, qty:0, beds:"1 King bed"},
-  {key:'royal', name:"Royal Family Suite (Sea View)", rack:50000, offer:19000, cap:4, qty:3, beds:"1 Double + 2 Single"},
+/* ─── DATA ─── */
+const ROOMS = [
+  {key:'sk',   name:"Superior King (Garden View)",          offer:7199,  cap:2, beds:"1 King bed"},
+  {key:'st',   name:"Superior Twin (Garden View)",           offer:7199,  cap:2, beds:"2 Twin beds"},
+  {key:'shv',  name:"Superior (Hill View Triple)",           offer:9750,  cap:3, beds:"1 Double + 1 Single"},
+  {key:'ssv',  name:"Superior (Sea View Triple)",            offer:10750, cap:3, beds:"1 Double + 1 Single"},
+  {key:'stk',  name:"Studio King (Sea View)",                offer:11000, cap:2, beds:"1 King bed"},
+  {key:'pk',   name:"Premier King (Sea View)",               offer:12500, cap:2, beds:"1 King bed"},
+  {key:'eco',  name:"Eco Suite (Hill View, balcony)",        offer:9500,  cap:2, beds:"1 King bed"},
+  {key:'exe',  name:"Executive Suite (Sea View, balcony)",   offer:13500, cap:2, beds:"1 King bed"},
+  {key:'royal',name:"Royal Family Suite (Sea View)",         offer:19000, cap:4, beds:"1 Double + 2 Single"},
 ];
 
-const members = ["Shahrina","Rajib","Muttaqi","Muhtadi","Sharif","Dalia","Yushra","Yafee","Shirin","Zarin","Maya","Kamrun","Saiful","Wasit","Makhzum","Rehana","Muhaimeen"];
-const childDefaults = {"Yafee":"c10p"};
-const categories = ["adult","c05","c610","c10p"];
-const catMeta = {
-  adult:{label:"Adult", charge:0, cls:"cat-adult"},
-  c05:{label:"0–5", charge:0, cls:"cat-c05"},
-  c610:{label:"6–10", charge:1000, cls:"cat-c610"},
-  c10p:{label:"10+", charge:3000, cls:"cat-c10p"},
+const MEMBERS   = ["Shahrina","Rajib","Muttaqi","Muhtadi","Sharif","Dalia","Yushra","Yafee","Shirin","Zarin","Maya","Kamrun","Saiful","Wasit","Makhzum","Rehana","Muhaimeen"];
+const CHILD_DEF = {Yafee:"c10p"};
+const CATS      = ["adult","c05","c610","c10p"];
+const CAT_META  = {
+  adult:{label:"Adult",  childFactor:0, cls:"cat-adult"},
+  c05:  {label:"0–5",    childFactor:0, cls:"cat-c05"},
+  c610: {label:"6–10",   childFactor:1, cls:"cat-c610"},
+  c10p: {label:"10+",    childFactor:1, cls:"cat-c10p"},
 };
-const avatarColors = ["#146B86","#FF6B4A","#F4B740","#A9DCD3","#0A3A4F"];
-const family = members.map((name,i)=>({
-  name, cat: childDefaults[name] || "adult", color: avatarColors[i % avatarColors.length]
-}));
-const TOTAL_PEOPLE = family.length;
+const AVATAR_COLORS = ["#146B86","#FF6B4A","#F4B740","#A9DCD3","#0A3A4F","#146B86","#E14F30","#1E8A5F","#9A6B00","#0A3A4F","#FF6B4A","#146B86","#F4B740","#E14F30","#1C8C9E","#146B86","#A9DCD3"];
 
-const operators = [
+const TRANS_KEYS = ['bb','ff','bf','fb'];
+const TRANS_META = {
+  bb:{icon:'🚌→🚌', label:'Bus both ways'},
+  ff:{icon:'✈️→✈️', label:'Flight both ways'},
+  bf:{icon:'🚌→✈️', label:'Bus go · Flight back'},
+  fb:{icon:'✈️→🚌', label:'Flight go · Bus back'},
+};
+
+const OPERATORS = [
   {key:'saintmartin', name:"Saint Martin Paribahan", seat:"Sleeper · Mercedes Benz", fare:2000,
-   url:"https://bdtickets.com/travel/search/bus/dhaka-to-coxs-bazar?journeyDate=2026-07-03&returnDate=2026-07-06&journeyType=onward&seatTypes=Sleeper&busOperators=Saintmartin+Paribahan"},
-  {key:'greenline', name:"Green Line Paribahan", seat:"AC Business Class", fare:2500,
+   url:"https://bdtickets.com/travel/search/bus/dhaka-to-coxs-bazar?journeyDate=2026-07-06&returnDate=2026-07-08&journeyType=onward&seatTypes=Sleeper&busOperators=Saintmartin+Paribahan"},
+  {key:'greenline',   name:"Green Line Paribahan",   seat:"AC Business Class",       fare:2500,
    url:"https://greenlinebd.com"},
 ];
-let selectedOperator = 'saintmartin';
 
-let nights = 3;
-let trips = 2;
+const family = MEMBERS.map((name,i) => ({
+  name,
+  cat:   CHILD_DEF[name] || 'adult',
+  trans: 'bb',
+  color: AVATAR_COLORS[i],
+}));
+const N = family.length;
 
-const fmt = n => "৳" + Math.round(n).toLocaleString('en-US');
+let selectedOp = 'saintmartin';
+let nights     = 2;
+let activeNight = 0;
+let nightPlan  = []; // nightPlan[ni][roomKey] = qty
 
-function buildRoomGrid(){
-  const grid = document.getElementById('roomGrid');
+const TRIP_START = new Date(2026, 6, 6);
+function nightLabel(ni){
+  const d = new Date(TRIP_START); d.setDate(d.getDate() + ni);
+  return `Night ${ni+1} · ${d.toLocaleDateString('en-GB',{day:'numeric',month:'short'})}`;
+}
+
+function fmt(n){ return '৳' + Math.round(n).toLocaleString('en-US'); }
+
+/* ─── NIGHT PLAN ─── */
+function initNightPlan(){
+  const old = nightPlan.slice();
+  nightPlan = Array.from({length: nights}, (_, ni) => {
+    if(ni < old.length) return Object.assign({}, old[ni]);
+    const p = {}; ROOMS.forEach(r => p[r.key] = 0); return p;
+  });
+  // seed defaults: Night 1 = Sea View Triple×3 + King×3, Night 2 = Sea View Triple×4 + King×2
+  if(!old.length){
+    nightPlan[0].ssv = 3; nightPlan[0].sk = 3;
+    if(nights > 1){ nightPlan[1].ssv = 4; nightPlan[1].sk = 2; }
+  }
+  if(activeNight >= nights) activeNight = nights - 1;
+}
+
+/* ─── NIGHT TABS ─── */
+function buildNightTabs(){
+  const bar = document.getElementById('nightTabsBar');
+  bar.innerHTML = '';
+  for(let ni = 0; ni < nights; ni++){
+    const btn = document.createElement('button');
+    btn.className = 'night-tab' + (ni === activeNight ? ' active' : '');
+    btn.textContent = nightLabel(ni);
+    btn.onclick = () => { activeNight = ni; buildNightTabs(); buildNightRooms(); updateCapacity(); };
+    bar.appendChild(btn);
+  }
+}
+
+/* ─── ROOM CARDS (active night) ─── */
+function buildNightRooms(){
+  const grid = document.getElementById('nightRoomsGrid');
+  const plan = nightPlan[activeNight];
   grid.innerHTML = '';
-  rooms.forEach(r=>{
+  ROOMS.forEach(r => {
+    const qty = plan[r.key] || 0;
     const card = document.createElement('div');
-    card.className = 'room-card' + (r.qty>0 ? ' active':'');
+    card.className = 'room-card' + (qty > 0 ? ' active' : '');
     card.innerHTML = `
       <span class="cap-pill">Sleeps ${r.cap}</span>
       <h4>${r.name}</h4>
@@ -647,229 +537,332 @@ function buildRoomGrid(){
       <div class="stepper">
         <div class="btns">
           <button onclick="changeQty('${r.key}',-1)">−</button>
-          <div class="qty" id="qty-${r.key}">${r.qty}</div>
+          <div class="qty">${qty}</div>
           <button onclick="changeQty('${r.key}',1)">+</button>
         </div>
-        <div class="subtotal" id="sub-${r.key}">${fmt(r.qty*r.offer)}</div>
+        <div class="subtotal">${fmt(qty * r.offer)}</div>
       </div>`;
     grid.appendChild(card);
   });
 }
 
 function changeQty(key, delta){
-  const r = rooms.find(x=>x.key===key);
-  r.qty = Math.max(0, Math.min(10, r.qty + delta));
-  buildRoomGrid();
-  recalc();
+  const plan = nightPlan[activeNight];
+  plan[key] = Math.max(0, Math.min(10, (plan[key] || 0) + delta));
+  buildNightRooms(); buildNightSummary(); updateCapacity(); recalc();
 }
 
+/* ─── CAPACITY BAR ─── */
+function updateCapacity(){
+  const plan = nightPlan[activeNight];
+  const cap  = ROOMS.reduce((s, r) => s + (plan[r.key] || 0) * r.cap, 0);
+  const pct  = Math.min(100, (cap / N) * 100);
+  document.getElementById('capNightLabel').textContent = nightLabel(activeNight) + ' — beds covered';
+  document.getElementById('capText').textContent = cap + ' / ' + N;
+  document.getElementById('capFill').style.width = pct + '%';
+  const el = document.getElementById('capNote');
+  if(cap >= N){
+    el.textContent  = cap === N ? 'Perfect fit — every traveler has a bed this night.' : (cap - N) + ' spare bed(s) this night.';
+    el.className = 'capacity-note ok';
+  } else {
+    el.textContent = (N - cap) + ' traveler(s) still need a bed for this night.';
+    el.className = 'capacity-note warn';
+  }
+}
+
+/* ─── NIGHT SUMMARY TABLE ─── */
+function buildNightSummary(){
+  const discPct = Number(document.getElementById('discountRange').value) / 100;
+  let html = '<tr><th>Room</th><th>৳/Night</th>';
+  for(let ni = 0; ni < nights; ni++) html += '<th>' + nightLabel(ni) + '</th>';
+  html += '<th>Total rooms</th></tr>';
+
+  ROOMS.forEach(r => {
+    const hasAny = nightPlan.some(p => (p[r.key] || 0) > 0);
+    if(!hasAny) return;
+    html += '<tr><td>' + r.name + '</td><td>' + fmt(r.offer) + '</td>';
+    for(let ni = 0; ni < nights; ni++){
+      const q = nightPlan[ni][r.key] || 0;
+      html += '<td style="text-align:center">' + (q > 0 ? q + ' rm' : '—') + '</td>';
+    }
+    const tot = nightPlan.reduce((s, p) => s + (p[r.key] || 0), 0);
+    html += '<td style="font-weight:700;text-align:center">' + tot + ' rm</td></tr>';
+  });
+
+  // per-night subtotals
+  html += '<tr class="sum-row"><td colspan="2"><b>Night subtotal</b></td>';
+  let grandSub = 0;
+  for(let ni = 0; ni < nights; ni++){
+    const sub = ROOMS.reduce((s, r) => s + (nightPlan[ni][r.key] || 0) * r.offer, 0);
+    grandSub += sub;
+    html += '<td style="text-align:right"><b>' + fmt(sub) + '</b></td>';
+  }
+  html += '<td style="text-align:right"><b>' + fmt(grandSub) + '</b></td></tr>';
+
+  const disc = grandSub * discPct;
+  const net  = grandSub - disc;
+  html += '<tr class="total-row"><td colspan="' + (2 + nights) + '" style="text-align:right">Total before discount</td><td style="text-align:right"><b>' + fmt(grandSub) + '</b></td></tr>';
+  html += '<tr class="disc-row"><td colspan="' + (2 + nights) + '" style="text-align:right">After ' + Math.round(discPct * 100) + '% discount</td><td style="text-align:right"><b>' + fmt(net) + '</b></td></tr>';
+
+  document.getElementById('nightSummaryTable').innerHTML = html;
+}
+
+/* ─── ROSTER ─── */
 function buildRoster(){
   const grid = document.getElementById('rosterGrid');
   grid.innerHTML = '';
-  family.forEach((m,i)=>{
-    const initials = m.name.slice(0,2).toUpperCase();
-    const meta = catMeta[m.cat];
+  family.forEach((m, i) => {
+    const init = m.name.slice(0, 2).toUpperCase();
+    const cm   = CAT_META[m.cat];
+    const tm   = TRANS_META[m.trans];
     const chip = document.createElement('div');
     chip.className = 'chip';
     chip.innerHTML = `
-      <div class="avatar" style="background:${m.color}">${initials}</div>
+      <div class="avatar" style="background:${m.color}" title="Tap to change age">${init}</div>
       <div class="name">${m.name}</div>
-      <div class="cat ${meta.cls}" id="cat-${i}">${meta.label}</div>`;
-    chip.onclick = ()=>{
-      const idx = categories.indexOf(m.cat);
-      m.cat = categories[(idx+1)%categories.length];
-      buildRoster();
-      recalc();
+      <div class="cat ${cm.cls}">${cm.label}</div>
+      <div class="trans-pill trans-${m.trans}" title="${tm.label}">${tm.icon}</div>`;
+    const cycleCat = () => {
+      const idx = CATS.indexOf(m.cat);
+      m.cat = CATS[(idx + 1) % CATS.length];
+      buildRoster(); recalc();
+    };
+    chip.querySelector('.avatar').onclick = e => { e.stopPropagation(); cycleCat(); };
+    chip.querySelector('.name').onclick   = e => { e.stopPropagation(); cycleCat(); };
+    chip.querySelector('.cat').onclick    = e => { e.stopPropagation(); cycleCat(); };
+    chip.querySelector('.trans-pill').onclick = e => {
+      e.stopPropagation();
+      const idx = TRANS_KEYS.indexOf(m.trans);
+      m.trans = TRANS_KEYS[(idx + 1) % TRANS_KEYS.length];
+      buildRoster(); recalc();
     };
     grid.appendChild(chip);
   });
 }
 
+/* ─── OPERATORS ─── */
 function buildOperators(){
   const grid = document.getElementById('operatorGrid');
   grid.innerHTML = '';
-  operators.forEach(op=>{
+  OPERATORS.forEach(op => {
     const card = document.createElement('div');
-    card.className = 'operator-card' + (op.key===selectedOperator ? ' active':'');
+    card.className = 'operator-card' + (op.key === selectedOp ? ' active' : '');
     card.innerHTML = `
-      <div class="op-top">
-        <div>
-          <h4>${op.name}</h4>
-          <div class="op-seat">${op.seat}</div>
-        </div>
-        <div class="op-price">${fmt(op.fare)}</div>
-      </div>
-      <span class="op-pick">${op.key===selectedOperator ? 'Selected' : 'Tap to select'}</span>
+      <div class="op-top"><div><h4>${op.name}</h4><div class="op-seat">${op.seat}</div></div><div class="op-price">${fmt(op.fare)}</div></div>
+      <span class="op-pick">${op.key === selectedOp ? 'Selected (default bus fare)' : 'Tap to set as default bus fare'}</span>
       <a class="op-link" href="${op.url}" target="_blank" rel="noopener">Book tickets ↗</a>`;
-    card.addEventListener('click', e=>{
+    card.addEventListener('click', e => {
       if(e.target.closest('.op-link')) return;
-      selectOperator(op.key);
+      selectedOp = op.key;
+      document.getElementById('busFare').value = op.fare;
+      document.getElementById('routeOperator').textContent = op.name + ' · ' + op.seat;
+      buildOperators(); recalc();
     });
     grid.appendChild(card);
   });
 }
 
-function selectOperator(key){
-  selectedOperator = key;
-  const op = operators.find(o=>o.key===key);
-  document.getElementById('busFare').value = op.fare;
-  document.getElementById('routeOperator').textContent = `${op.name} · ${op.seat}`;
-  buildOperators();
-  recalc();
-}
-
+/* ─── CHANGE NIGHTS ─── */
 function changeNights(delta){
-  nights = Math.max(1, Math.min(14, nights+delta));
+  nights = Math.max(1, Math.min(14, nights + delta));
   document.getElementById('nightsVal').textContent = nights;
-  recalc();
+  initNightPlan();
+  buildNightTabs(); buildNightRooms(); buildNightSummary(); updateCapacity(); recalc();
 }
 
-function setTrips(v){
-  trips = v;
-  document.getElementById('oneWayBtn').classList.toggle('active', v===1);
-  document.getElementById('roundBtn').classList.toggle('active', v===2);
-  recalc();
-}
-
-document.getElementById('discountRange').addEventListener('input', e=>{
+/* ─── EVENT LISTENERS ─── */
+document.getElementById('discountRange').addEventListener('input', e => {
   document.getElementById('discountVal').textContent = e.target.value + '%';
-  recalc();
+  buildNightSummary(); recalc();
 });
-document.getElementById('busFare').addEventListener('input', recalc);
+['busFare','flightFare','childRate'].forEach(id =>
+  document.getElementById(id).addEventListener('input', recalc)
+);
 
+/* ─── RECALC ─── */
 function recalc(){
-  rooms.forEach(r=>{
-    const subEl = document.getElementById('sub-'+r.key);
-    if(subEl) subEl.textContent = fmt(r.qty*r.offer);
-    const qEl = document.getElementById('qty-'+r.key);
-    if(qEl) qEl.textContent = r.qty;
+  const discPct   = Number(document.getElementById('discountRange').value) / 100;
+  const busFare   = Number(document.getElementById('busFare').value)   || 0;
+  const fltFare   = Number(document.getElementById('flightFare').value) || 0;
+  const childRate = Number(document.getElementById('childRate').value)  || 0;
+
+  // Room total across all nights
+  let roomSub = 0;
+  for(let ni = 0; ni < nights; ni++)
+    ROOMS.forEach(r => { roomSub += (nightPlan[ni][r.key] || 0) * r.offer; });
+  const discAmt  = roomSub * discPct;
+  const roomTotal = roomSub - discAmt;
+
+  // Transport — per person, per leg
+  let busTotal = 0, fltTotal = 0;
+  family.forEach(m => {
+    if(m.trans[0] === 'b') busTotal += busFare; else fltTotal += fltFare;
+    if(m.trans[1] === 'b') busTotal += busFare; else fltTotal += fltFare;
   });
+  const transTotal = busTotal + fltTotal;
 
-  const totalCap = rooms.reduce((s,r)=>s+r.qty*r.cap,0);
-  const capPct = Math.min(100, (totalCap/TOTAL_PEOPLE)*100);
-  document.getElementById('capText').textContent = `${totalCap} / ${TOTAL_PEOPLE}`;
-  document.getElementById('capFill').style.width = capPct + '%';
-  const capNote = document.getElementById('capNote');
-  if(totalCap >= TOTAL_PEOPLE){
-    capNote.textContent = totalCap===TOTAL_PEOPLE ? "Perfect fit — every traveler has a bed." : `${totalCap-TOTAL_PEOPLE} spare bed(s) booked.`;
-    capNote.className = 'capacity-note ok';
-  } else {
-    capNote.textContent = `${TOTAL_PEOPLE-totalCap} traveler(s) still need a bed — add rooms above.`;
-    capNote.className = 'capacity-note warn';
-  }
+  // Children: rate × nights × count
+  const childKids  = family.filter(m => CAT_META[m.cat].childFactor > 0);
+  const childTotal = childKids.length * childRate * nights;
 
-  const subtotal = rooms.reduce((s,r)=>s+r.qty*r.offer,0);
-  const discountPct = Number(document.getElementById('discountRange').value);
-  const discountAmt = subtotal * discountPct/100;
-  const roomNet = subtotal - discountAmt;
-  const roomTotal = roomNet * nights;
+  const grand = roomTotal + transTotal + childTotal;
 
-  const busFare = Number(document.getElementById('busFare').value) || 0;
-  const busTotal = busFare * TOTAL_PEOPLE * trips;
-
-  const childTotal = family.reduce((s,m)=>s+catMeta[m.cat].charge,0);
-
-  const grand = roomTotal + busTotal + childTotal;
-
-  document.getElementById('lnSubtotal').textContent = fmt(subtotal);
-  document.getElementById('lnDiscount').textContent = '−' + fmt(discountAmt);
+  document.getElementById('lnSubtotal').textContent  = fmt(roomSub);
+  document.getElementById('lnDiscount').textContent  = '−' + fmt(discAmt);
   document.getElementById('lnRoomTotal').textContent = fmt(roomTotal);
-  document.getElementById('lnBus').textContent = fmt(busTotal);
-  document.getElementById('lnChild').textContent = fmt(childTotal);
-  document.getElementById('grandTotal').textContent = fmt(grand);
-  document.getElementById('perPerson').textContent = fmt(grand/TOTAL_PEOPLE);
+  document.getElementById('lnTransport').textContent = fmt(transTotal);
+  document.getElementById('lnBus').textContent       = fmt(busTotal);
+  document.getElementById('lnFlight').textContent    = fmt(fltTotal);
+  document.getElementById('lnChild').textContent     = childKids.length > 0
+    ? fmt(childTotal) + ' (' + childKids.length + '×৳' + childRate + '×' + nights + 'n)'
+    : fmt(0);
+  document.getElementById('grandTotal').textContent  = fmt(grand);
+  document.getElementById('perPerson').textContent   = fmt(grand / N);
 
-  const baseShare = (roomTotal + busTotal) / TOTAL_PEOPLE;
+  // Per-person breakdown
+  const roomShare = roomTotal / N;
   const list = document.getElementById('breakdownList');
   list.innerHTML = '';
-  family.forEach((m,i)=>{
-    const meta = catMeta[m.cat];
-    const personTotal = baseShare + meta.charge;
-    const initials = m.name.slice(0,2).toUpperCase();
+  family.forEach((m, i) => {
+    const cm   = CAT_META[m.cat];
+    const tm   = TRANS_META[m.trans];
+    const goFare  = m.trans[0] === 'b' ? busFare : fltFare;
+    const retFare = m.trans[1] === 'b' ? busFare : fltFare;
+    const transCost  = goFare + retFare;
+    const childCharge = cm.childFactor > 0 ? childRate * nights : 0;
+    const total = roomShare + transCost + childCharge;
+    const init  = m.name.slice(0, 2).toUpperCase();
     const row = document.createElement('div');
     row.className = 'breakdown-row';
     row.innerHTML = `
       <div class="bwho">
-        <div class="bavatar" style="background:${m.color}">${initials}</div>
-        <span class="bname">${m.name}</span>
-        ${meta.charge>0 ? `<span class="bnote">+${fmt(meta.charge)} ${meta.label}</span>` : ''}
+        <div class="bavatar" style="background:${m.color}">${init}</div>
+        <div class="binfo">
+          <div class="bname">${m.name} <span style="font-size:11px;opacity:.65">${tm.icon}</span>${childCharge > 0 ? '<span class="bnote">child +' + fmt(childCharge) + '</span>' : ''}</div>
+          <div class="bdetail">${fmt(roomShare)} room + ${fmt(transCost)} travel${childCharge > 0 ? ' + ' + fmt(childCharge) + ' child' : ''}</div>
+        </div>
       </div>
-      <div class="bamt">${fmt(personTotal)}</div>`;
+      <div class="bamt">${fmt(total)}</div>`;
     list.appendChild(row);
   });
   const totalRow = document.createElement('div');
   totalRow.className = 'breakdown-total';
-  totalRow.innerHTML = `<span>Total (${TOTAL_PEOPLE} people)</span><span>${fmt(grand)}</span>`;
+  totalRow.innerHTML = '<span>Total (' + N + ' people)</span><span>' + fmt(grand) + '</span>';
   list.appendChild(totalRow);
 }
 
-buildRoomGrid();
+/* ─── INIT ─── */
+initNightPlan();
+buildNightTabs();
+buildNightRooms();
+buildNightSummary();
+updateCapacity();
 buildOperators();
 buildRoster();
-document.getElementById('heroSub').textContent = `${TOTAL_PEOPLE} of us, one beach, zero stress — plan rooms, rides & budget in one place.`;
-document.getElementById('travelersHeading').textContent = `Our ${TOTAL_PEOPLE} Travelers`;
-document.getElementById('paxStamp').textContent = `${TOTAL_PEOPLE} Pax`;
-document.getElementById('ppLabel').textContent = `≈ per person (÷${TOTAL_PEOPLE})`;
+document.getElementById('heroSub').textContent   = N + ' of us, one beach, zero stress — plan rooms, rides & budget in one place.';
+document.getElementById('travelersHeading').textContent = 'Our ' + N + ' Travelers';
+document.getElementById('paxStamp').textContent  = N + ' Pax';
+document.getElementById('ppLabel').textContent   = '≈ per person avg (÷' + N + ')';
 recalc();
 
+/* ─── PDF DOWNLOAD ─── */
 async function downloadPDF(){
   const btn = document.querySelector('.dl-btn');
-  btn.textContent = '⏳ Generating…';
-  btn.disabled = true;
+  btn.textContent = '⏳ Generating…'; btn.disabled = true;
 
-  // populate pdf-content from live data
-  const subtotal = parseFloat(document.getElementById('lnSubtotal').textContent.replace(/[৳,]/g,'')) || 0;
-  const discount = parseFloat(document.getElementById('lnDiscount').textContent.replace(/[−৳,]/g,'')) || 0;
-  const roomTotal = parseFloat(document.getElementById('lnRoomTotal').textContent.replace(/[৳,]/g,'')) || 0;
-  const bus = parseFloat(document.getElementById('lnBus').textContent.replace(/[৳,]/g,'')) || 0;
-  const child = parseFloat(document.getElementById('lnChild').textContent.replace(/[৳,]/g,'')) || 0;
-  const grand = parseFloat(document.getElementById('grandTotal').textContent.replace(/[৳,]/g,'')) || 0;
+  const discPct   = Number(document.getElementById('discountRange').value) / 100;
+  const busFare   = Number(document.getElementById('busFare').value)   || 0;
+  const fltFare   = Number(document.getElementById('flightFare').value) || 0;
+  const childRate = Number(document.getElementById('childRate').value)  || 0;
 
-  document.getElementById('pdf-pax').textContent = TOTAL_PEOPLE;
-  document.getElementById('pdf-subtotal').textContent = document.getElementById('lnSubtotal').textContent;
-  document.getElementById('pdf-discount').textContent = document.getElementById('lnDiscount').textContent;
-  document.getElementById('pdf-roomnet').textContent = document.getElementById('lnRoomTotal').textContent;
-  document.getElementById('pdf-bus').textContent = document.getElementById('lnBus').textContent;
-  document.getElementById('pdf-child').textContent = document.getElementById('lnChild').textContent;
-  document.getElementById('pdf-grand').textContent = document.getElementById('grandTotal').textContent;
+  let roomSub = 0;
+  for(let ni = 0; ni < nights; ni++)
+    ROOMS.forEach(r => { roomSub += (nightPlan[ni][r.key] || 0) * r.offer; });
+  const discAmt   = roomSub * discPct;
+  const roomTotal = roomSub - discAmt;
+  let busTotal = 0, fltTotal = 0;
+  family.forEach(m => {
+    if(m.trans[0] === 'b') busTotal += busFare; else fltTotal += fltFare;
+    if(m.trans[1] === 'b') busTotal += busFare; else fltTotal += fltFare;
+  });
+  const childKids  = family.filter(m => CAT_META[m.cat].childFactor > 0);
+  const childTotal = childKids.length * childRate * nights;
+  const grand      = roomTotal + busTotal + fltTotal + childTotal;
 
-  // per-person table
-  const baseShare = (roomTotal + bus) / TOTAL_PEOPLE;
+  document.getElementById('pdf-pax').textContent = N;
+
+  // Build room-per-night table
+  let rh = '<tr><th>Room</th><th>৳/Night</th>';
+  for(let ni = 0; ni < nights; ni++) rh += '<th>' + nightLabel(ni) + '</th>';
+  rh += '<th>Total rooms</th></tr>';
+  ROOMS.forEach(r => {
+    if(!nightPlan.some(p => (p[r.key] || 0) > 0)) return;
+    rh += '<tr><td>' + r.name + '</td><td>' + fmt(r.offer) + '</td>';
+    for(let ni = 0; ni < nights; ni++){
+      const q = nightPlan[ni][r.key] || 0;
+      rh += '<td style="text-align:center">' + (q > 0 ? q + ' rm' : '—') + '</td>';
+    }
+    const tot = nightPlan.reduce((s, p) => s + (p[r.key] || 0), 0);
+    rh += '<td style="text-align:center;font-weight:700">' + tot + ' rm</td></tr>';
+  });
+  rh += '<tr><td colspan="2"><b>Night subtotal</b></td>';
+  for(let ni = 0; ni < nights; ni++){
+    const sub = ROOMS.reduce((s, r) => s + (nightPlan[ni][r.key] || 0) * r.offer, 0);
+    rh += '<td style="text-align:right"><b>' + fmt(sub) + '</b></td>';
+  }
+  rh += '<td style="text-align:right"><b>' + fmt(roomSub) + '</b></td></tr>';
+  document.getElementById('pdf-room-table').innerHTML = rh;
+
+  document.getElementById('pdf-subtotal').textContent = fmt(roomSub);
+  document.getElementById('pdf-discount').textContent = '−' + fmt(discAmt);
+  document.getElementById('pdf-roomnet').textContent  = fmt(roomTotal);
+  document.getElementById('pdf-bus').textContent      = fmt(busTotal);
+  document.getElementById('pdf-flight').textContent   = fmt(fltTotal);
+  document.getElementById('pdf-child').textContent    = childKids.length > 0
+    ? fmt(childTotal) + ' (' + childKids.length + ' kids × ৳' + childRate + ' × ' + nights + 'n)' : fmt(0);
+  document.getElementById('pdf-grand').textContent    = fmt(grand);
+
+  // Per-person table
   const pt = document.getElementById('pdf-person-table');
   pt.innerHTML = '';
   const hdr = document.createElement('tr');
-  hdr.innerHTML = '<td><b>#</b></td><td><b>Name</b></td><td><b>Base Share</b></td><td><b>Extra</b></td><td><b>Total</b></td>';
+  hdr.innerHTML = '<th>#</th><th>Name</th><th>Room share</th><th>Transport</th><th>Child</th><th>Total</th>';
   pt.appendChild(hdr);
-  family.forEach((m,i)=>{
-    const meta = catMeta[m.cat];
-    const total = baseShare + meta.charge;
+  const roomShare = roomTotal / N;
+  family.forEach((m, i) => {
+    const cm      = CAT_META[m.cat];
+    const tm      = TRANS_META[m.trans];
+    const goFare  = m.trans[0] === 'b' ? busFare : fltFare;
+    const retFare = m.trans[1] === 'b' ? busFare : fltFare;
+    const transCost   = goFare + retFare;
+    const childCharge = cm.childFactor > 0 ? childRate * nights : 0;
+    const total = roomShare + transCost + childCharge;
     const tr = document.createElement('tr');
-    tr.innerHTML = `<td>${i+1}</td><td>${m.name}</td><td>${fmt(baseShare)}</td><td>${meta.charge>0?fmt(meta.charge):'—'}</td><td><b>${fmt(total)}</b></td>`;
+    tr.innerHTML = '<td>' + (i+1) + '</td><td>' + m.name + '</td><td style="text-align:right">' + fmt(roomShare) +
+      '</td><td>' + tm.icon + ' ' + fmt(transCost) + '</td><td style="text-align:right">' +
+      (childCharge > 0 ? fmt(childCharge) : '—') + '</td><td style="text-align:right"><b>' + fmt(total) + '</b></td>';
     pt.appendChild(tr);
   });
-  const tr = document.createElement('tr');
-  tr.className = 'pdf-total';
-  tr.innerHTML = `<td colspan="4"><b>GRAND TOTAL</b></td><td><b>${fmt(grand)}</b></td>`;
-  pt.appendChild(tr);
+  const footTr = document.createElement('tr');
+  footTr.className = 'pdf-total';
+  footTr.innerHTML = '<td colspan="5"><b>GRAND TOTAL</b></td><td style="text-align:right"><b>' + fmt(grand) + '</b></td>';
+  pt.appendChild(footTr);
 
-  // show the hidden div
   const el = document.getElementById('pdf-content');
   el.style.display = 'block';
-
-  await new Promise(r=>setTimeout(r,80));
+  await new Promise(r => setTimeout(r, 120));
 
   const canvas = await html2canvas(el, {scale:2, useCORS:true, backgroundColor:'#ffffff', logging:false});
   const imgData = canvas.toDataURL('image/png');
 
   const {jsPDF} = window.jspdf;
-  const pdf = new jsPDF({orientation:'portrait', unit:'mm', format:'a4'});
-  const pdfW = 210;
+  const pdf  = new jsPDF({orientation:'portrait', unit:'mm', format:'a4'});
+  const pdfW = 210, pageH = 297;
   const pdfH = (canvas.height * pdfW) / canvas.width;
-  const pageH = 297;
   let yPos = 0;
   while(yPos < pdfH){
     if(yPos > 0) pdf.addPage();
-    pdf.addImage(imgData,'PNG',0,-yPos,pdfW,pdfH,'','FAST');
+    pdf.addImage(imgData, 'PNG', 0, -yPos, pdfW, pdfH, '', 'FAST');
     yPos += pageH;
   }
   pdf.save('CoxsBazar_FamilyTrip_Summary.pdf');
